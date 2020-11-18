@@ -205,8 +205,12 @@ class Dashboard extends Component {
                         <center>
                             <form>
                         <h2 className="view-heading">Add Client</h2><br></br>
+                        <input type="text" placeholder="FirstName" required/><br></br><br></br>
+                        <input type="text" placeholder="LastName" required/><br></br><br></br>
                         <input type="text" placeholder="email" required/><br></br><br></br>
                         <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <input type="text" placeholder="PhoneNumber" required/><br></br><br></br>
+
                         <input type="button" value="Add"/>
                         </form>
                         </center>
@@ -225,6 +229,8 @@ class Dashboard extends Component {
                     <div className="dash-view">
                         <center>
                         <h2 className="view-heading">Add Employee</h2><br></br>
+                        <input type="text" placeholder="FirstName" required/><br></br><br></br>
+                        <input type="text" placeholder="LastName" required/><br></br><br></br>
                         <input type="text" placeholder="email" required/><br></br><br></br>
                         <input type="password" placeholder="Password" required/><br></br><br></br>
                         <input type="text" placeholder="PhoneNumber" required/><br></br><br></br>

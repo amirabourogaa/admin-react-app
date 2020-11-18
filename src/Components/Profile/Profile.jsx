@@ -15,9 +15,11 @@ class Profile extends Component {
          if(this.state.view===""){
     return (
         <div>
-        <h1>Welcome Boss</h1> 
+        <h1>Add Admin</h1> 
+             <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
 
-        <button value="update">Update Profile</button>
+                        <input type="button" value="Add"/>
         </div>
     )} else if(this.state.view==="update"){
         return (

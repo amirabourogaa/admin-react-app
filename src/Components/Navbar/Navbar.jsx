@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Profile from './Profile.jsx';
-import Messageform from './Messageform.jsx';
-import Dashboard from "./Dashboard.jsx";
+import Profile from '../Profile/Profile.jsx';
+import Messageform from '../Message/Messageform.jsx';
+import Dashboard from "../Dashboard/Dashboard.jsx";
 
     class Navbar extends Component {
         constructor(props) {
@@ -52,9 +52,10 @@ import Dashboard from "./Dashboard.jsx";
                   <span
                     className="nav"
                     className="nav-selected"
-                    onClick={(e) => this.Dashboard(e)}
+                    onClick={(e) => this.Dashboard(e)}  
                   >
-                    My Dashboard
+                       {" "}  {" "}
+                    My Dashboard 
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
                     {" "}
