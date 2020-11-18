@@ -7,16 +7,25 @@ class Profile extends Component {
         data : [],
         email : "",
         password : "",
+        view : "",
 
     }
     }
      render(){
+         if(this.state.view===""){
     return (
         <div>
         <h1>Welcome Boss</h1> 
-        <button>Update Profile</button>
+
+        <button value="update">Update Profile</button>
         </div>
-    )
+    )} else if(this.state.view==="update"){
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 }
 export default  Profile;

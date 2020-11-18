@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Profile from './Profile.jsx';
+import TextareaAutosize from "react-textarea-autosize";
+
 
 class Dashboard extends Component {
     constructor(props) {
@@ -239,11 +240,20 @@ class Dashboard extends Component {
         class PerformanceView extends React.Component {
             constructor(props) {
                 super(props);
+                this.state = {}
             }
             render() {
                 return (
                     <div className="dash-view">
                         <h2 className="view-heading">Add tasks</h2>
+                        <table>
+                            <tr>
+                                <td>Not Start</td>
+                                <td>In progress</td>
+                                <td>Done</td>
+                                
+                            </tr>
+                        </table>
                           
                         <DashboardCard />
                     </div>
