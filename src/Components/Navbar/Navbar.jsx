@@ -46,7 +46,7 @@ import Board from '../Profile/Board.jsx';
               <div>
                 <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  🟩
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
                   </span>
                   <span
                     className="nav"
@@ -73,7 +73,8 @@ import Board from '../Profile/Board.jsx';
               <div>
                 <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  🟩
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+
                   </span>
                   <span
                     className="nav"
@@ -99,7 +100,7 @@ import Board from '../Profile/Board.jsx';
               <div>
                  <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  🟩
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
                   </span>
                   <span
                     className="nav"

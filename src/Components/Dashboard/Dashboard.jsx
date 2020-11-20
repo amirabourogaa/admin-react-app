@@ -245,132 +245,20 @@ class Dashboard extends Component {
             }
         }
         
+      
         class PerformanceView extends React.Component {
-            constructor (props) {
+            constructor(props) {
                 super(props);
-                this.state = {
-                  title: '',
-                  responsible: '',
-                  description: '',
-                  priority: 'low',
-                  todos
-                };
-                this.handleInputChange = this.handleInputChange.bind(this);
-                this.handleSubmit= this. handleSubmit.bind(this);
-                this.handleAddTodo = this.handleAddTodo.bind(this);
-
-              }
-            
-              handleSubmit(e) {
-                e.preventDefault();
-                console.log('Sending the data..');
-              }
-                handleAddTodo(todo){
-                    this.setState({
-                      todos: [...this.state.todos, todo]
-               
-              });
-                } 
-        
-                removeTodo(index){
-                    if(window.confirm('Are you sure you want to delete it?')){
-                      this.setState({
-                        todos: this.state.todos.filter((e,i) => {
-                          return i !== index
-                        })
-                      })
-                    }
-                  }
-              handleInputChange(e) {
-                const { value, name } = e.target;
-                this.setState({
-                  [name] : value
-                })
-                console.log(this.state);
-                };
-              // }
-            
-              render() {
-                const todos = this.state.todos.map((todo,i) => {
-                    return(
-                      <div className="col-md-4" key={i}>
-                        <div className="card mt-4">
-                          <div className="card-header">
-                            <h3>{todo.title}</h3>
-                            <span className="barge badge-pill badge-danger ml-2">
-                              {todo.priority}
-                            </span>
-                          </div>
-                          <div className="card-body">
-                            <p>{todo.description}</p>
-                            <p>{todo.responsible}</p>
-                          </div>
-                          <div className="card-footer">
-                            <button className="btn btn-danger" onClick={this.removeTodo.bind(this,i)}>
-                              Delete
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })
-                  
+            }
+            render() {
                 return (
-                  <div className="card">
-                    <form className="card-body" onSubmit={this.handleSubmit}>
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          name="title"
-                          className="form-control"
-                          // value={this.state.title}
-                          onChange={this.handleInputChange}
-                          placeholder="Title"
-                          />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          name="responsible"
-                          className="form-control"
-                          // value={this.state.responsible}
-                          onChange={this.handleInputChange}
-                          placeholder="Responsible"
-                          />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          name="description"
-                          className="form-control"
-                          // value={this.state.description}
-                          onChange={this.handleInputChange}
-                          placeholder="Description"
-                          />
-                      </div>
-                      <div className="form-group">
-                        <select
-                            name="priority"
-                            className="form-control"
-                            // value={this.state.priority}
-                            onChange={this.handleInputChange}
-                          >
-                          <option>low</option>
-                          <option>medium</option>
-                          <option>high</option>
-                        </select>
-                      </div>
-                      <button type="submit" className="btn btn-primary">
-                        Save
-                      </button>
-                    </form>
-                    <DashboardCard />
-
-                  </div>
+                    <div className="dash-view">
+                        <h2 className="view-heading">Add tasks</h2>
                           
+                        <DashboardCard />
+                    </div>
                 );
-            
-                } 
+            }
         }
         
 
