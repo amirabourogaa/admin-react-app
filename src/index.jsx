@@ -4,6 +4,8 @@ import Login from "./Components/Login/Login.jsx";
 import { BrowserRouter as Router , Switch , Route } from 'react-router-dom'
 import Land from "./Components/Landing/Landingpage.jsx";
 import Board from "./Components/Profile/Board.jsx";
+import './/Components/My Employee/App.css';
+
 class App extends React.Component {
     render(){
         return (

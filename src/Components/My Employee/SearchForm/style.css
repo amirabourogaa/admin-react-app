@@ -1,0 +1,19 @@
+input, button {
+    box-shadow: none;
+    border-style: none;
+}
+
+.submit-button {
+    margin-right: 1rem;
+    background-color: #17252A;
+    color: #FEFFFF;
+}
+
+.submit-button:hover {
+    background-color: #FEFFFF;
+    color: #17252a;
+}
+
+#right-button {
+    margin: 0;
+}

@@ -111,6 +111,7 @@ class Dashboard extends Component {
                         />
                         <h3 id="display-name">{this.props.username}</h3>
                         <p className="subtitle">{this.props.usertitle}</p>
+                  
                     </div>
                 );
             }
