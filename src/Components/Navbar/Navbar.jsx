@@ -68,7 +68,7 @@ import Employee from '../My Employee/Employee.jsx';
                     {" "}
                     My messages
                   </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
                     {" "}
                     My Employee
                   </span>
@@ -99,7 +99,7 @@ import Employee from '../My Employee/Employee.jsx';
                     My messages
                   </span>
                  
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
                     {" "}
                     My Employee
                   </span>
@@ -128,7 +128,7 @@ import Employee from '../My Employee/Employee.jsx';
                     My messages
                   </span>
                  
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
                     {" "}
                     My Employee
                   </span>
@@ -154,13 +154,13 @@ import Employee from '../My Employee/Employee.jsx';
                     {" "}
                     My messages
                   </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
                     {" "}
                     My Employee
                   </span>
 
                 </div>
-                <Employee/>
+                <Employee email={this.state.email} password={this.state.password}/>
               </div>
             );
           } 
