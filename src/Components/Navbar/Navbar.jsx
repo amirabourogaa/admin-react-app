@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Profile from '../Profile/Profile.jsx';
 import Messageform from '../Message/Messageform.jsx';
 import Dashboard from "../Dashboard/Dashboard.jsx";
-
+import Board from '../Profile/Board.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -90,7 +90,7 @@ import Dashboard from "../Dashboard/Dashboard.jsx";
                  
           
                 </div>
-                <Profile email={this.state.email} password={this.state.password}/>
+                <Board email={this.state.email} password={this.state.password}/>
 
               </div>
             );
