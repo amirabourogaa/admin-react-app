@@ -253,7 +253,7 @@ class Dashboard extends Component {
             render() {
                 return (
                     <div className="dash-view">
-                        <h2 className="view-heading">Add tasks</h2>
+                        <h2 className="view-heading">Edit Profile</h2>
                           
                         <DashboardCard />
                     </div>
