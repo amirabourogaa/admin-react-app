@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Profile from '../Profile/Profile.jsx';
 import Messageform from '../Message/Messageform.jsx';
 import Dashboard from "../Dashboard/Dashboard.jsx";
 import Board from '../Profile/Board.jsx';

@@ -434,23 +434,7 @@ class Dashboard extends Component {
         const PerformanceCardContent = () => (
             <div>
                
-               <div className="App">
-
-<nav className="navbar navbar-dark bg-dark">
-  <a href="" className="text-white">
-    Tasks
-    <span className="badge badge-pill badge-light ml-2">
-      { this.state.todos.length }
-    </span>
-  </a>
-</nav>
-<div className="container">
-<div className="row mt-4">
-<PerformanceView onAddTodo={this.handleAddTodo}/>
-{ todos }
-</div>
-</div>
-</div>
+               
                           
                 
             </div>
