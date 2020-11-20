@@ -13,7 +13,7 @@ class App extends React.Component {
             <Land /> 
             <Switch>
                 <Route path='/Login' exact component={Login}/>
-               
+                
             </Switch>
         </div>
     </Router>

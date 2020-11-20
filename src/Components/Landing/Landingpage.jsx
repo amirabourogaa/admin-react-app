@@ -32,7 +32,7 @@ class Land extends React.Component {
             </h3>
             <br />
             <button className="landB1" onClick={this.toUserLogin}>
-            Join as User
+            Join as Admin
             </button>
           
           </div>
