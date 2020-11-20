@@ -84,7 +84,7 @@ class Dashboard extends Component {
                         <SidebarMenu
                             item1={"Add Client"}
                             item2={"Add Employee"}
-                            item3={"Add tasks"}
+                            item3={"Update Profile"}
                             item4={"Calendar"}
                             setView={this.props.setView}
                         />
