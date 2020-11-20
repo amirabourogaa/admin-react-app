@@ -254,7 +254,11 @@ class Dashboard extends Component {
                 return (
                     <div className="dash-view">
                         <h2 className="view-heading">Edit Profile</h2>
-                          
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="button" value="Save"/>                          
                         <DashboardCard />
                     </div>
                 );
