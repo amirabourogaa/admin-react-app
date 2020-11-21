@@ -1,0 +1,14 @@
+tr{
+    border-top: hidden;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: #def2f1;
+  color: #17252A;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+  background-color: #FEFFFF;
+  color:#17252A;
+}

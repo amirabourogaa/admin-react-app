@@ -1,0 +1,30 @@
+{
+    "todos": [
+      {
+        "title": "Task 1",
+        "responsible": "ahmed",
+        "description": "lorem ipsum",
+        "priority": "low"
+      },
+      {
+        "title": "Task 2",
+        "responsible": "amira",
+        "description": "lorem ipsum 2",
+        "priority": "medium"
+      },
+      {
+        "title": "Task 3",
+        "responsible": "issam",
+        "description": "lorem ipsum 3",
+        "priority": "high"
+      },
+      {
+        "title": "Task 4",
+        "responsible": "nahedh",
+        "description": "lorem ipsum 4",
+        "priority": "low"
+      }
+  
+    ]
+  }
+  
