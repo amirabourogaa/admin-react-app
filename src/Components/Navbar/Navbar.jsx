@@ -3,6 +3,7 @@ import Messageform from '../Message/Messageform.jsx';
 import Dashboard from "../Dashboard/Dashboard.jsx";
 import Board from '../Profile/Board.jsx';
 import Employee from '../My Employee/Employee.jsx';
+import client from '../Client/Client.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -16,6 +17,7 @@ import Employee from '../My Employee/Employee.jsx';
           this.Dashboard = this.Dashboard.bind(this);
           this.message = this.message.bind(this);
           this.Employee = this.Employee.bind(this);
+          this.client = this.client.bind(this);
         }
         componentDidMount() {
           this.setState({
@@ -26,6 +28,12 @@ import Employee from '../My Employee/Employee.jsx';
           e.preventDefault();
           this.setState({
             check: "Dashboard",
+          });
+        }
+        client(e) {
+          e.preventDefault();
+          this.setState({
+            check: "client",
           });
         }
         profile(e) {
