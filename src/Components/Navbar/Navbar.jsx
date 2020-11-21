@@ -3,7 +3,7 @@ import Messageform from '../Message/Messageform.jsx';
 import Dashboard from "../Dashboard/Dashboard.jsx";
 import Board from '../Profile/Board.jsx';
 import Employee from '../My Employee/Employee.jsx';
-import client from '../Client/Client.jsx';
+import Client from '../Client/Client.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -80,7 +80,7 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
                     {" "}
                     My Clients
                   </span>
@@ -115,7 +115,7 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
                     {" "}
                     My Clients
                   </span>
