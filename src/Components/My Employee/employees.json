@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "first_name": "Issam",
+        "last_name": "Ben manssour",
+        "department": "Management",
+        "role": "Regional Manager",
+        "email": "issam@gmail.com"
+    },
+    {
+        "id": 2,
+        "first_name": "Ahmed",
+        "last_name": "kortas",
+        "department": "Sales",
+        "role": "Sales Lead",
+        "email": "ahmed@gmail.com"
+    },
+    {
+        "id": 3,
+        "first_name": "Mira",
+        "last_name": "Mira",
+        "department": "Sales",
+        "role": "Salesperson",
+        "email": "Mira@gmail.com"
+    },
+    {
+        "id": 4,
+        "first_name": "Phyllis",
+        "last_name": "Vance",
+        "department": "Sales",
+        "role": "Salesperson",
+        "email": "phyllisvance@dundermifflin.com"
+    },
+    {
+        "id": 5,
+        "first_name": "Stanley",
+        "last_name": "Hudson",
+        "department": "Sales",
+        "role": "Salesperson",
+        "email": "stanleyhudson@dundermifflin.com"
+    }
+   
+]

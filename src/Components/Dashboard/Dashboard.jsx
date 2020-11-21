@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import Profile from './Profile.jsx';
+import TextareaAutosize from "react-textarea-autosize";
+import {todos} from './todos.json';
+
+
 
 class Dashboard extends Component {
     constructor(props) {
@@ -81,7 +84,7 @@ class Dashboard extends Component {
                         <SidebarMenu
                             item1={"Add Client"}
                             item2={"Add Employee"}
-                            item3={"Add tasks"}
+                            item3={"Update Profile"}
                             item4={"Calendar"}
                             setView={this.props.setView}
                         />
@@ -108,6 +111,7 @@ class Dashboard extends Component {
                         />
                         <h3 id="display-name">{this.props.username}</h3>
                         <p className="subtitle">{this.props.usertitle}</p>
+                  
                     </div>
                 );
             }
@@ -204,8 +208,12 @@ class Dashboard extends Component {
                         <center>
                             <form>
                         <h2 className="view-heading">Add Client</h2><br></br>
+                        <input type="text" placeholder="FirstName" required/><br></br><br></br>
+                        <input type="text" placeholder="LastName" required/><br></br><br></br>
                         <input type="text" placeholder="email" required/><br></br><br></br>
                         <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <input type="text" placeholder="PhoneNumber" required/><br></br><br></br>
+
                         <input type="button" value="Add"/>
                         </form>
                         </center>
@@ -224,6 +232,8 @@ class Dashboard extends Component {
                     <div className="dash-view">
                         <center>
                         <h2 className="view-heading">Add Employee</h2><br></br>
+                        <input type="text" placeholder="FirstName" required/><br></br><br></br>
+                        <input type="text" placeholder="LastName" required/><br></br><br></br>
                         <input type="text" placeholder="email" required/><br></br><br></br>
                         <input type="password" placeholder="Password" required/><br></br><br></br>
                         <input type="text" placeholder="PhoneNumber" required/><br></br><br></br>
@@ -236,6 +246,7 @@ class Dashboard extends Component {
             }
         }
         
+      
         class PerformanceView extends React.Component {
             constructor(props) {
                 super(props);
@@ -243,13 +254,19 @@ class Dashboard extends Component {
             render() {
                 return (
                     <div className="dash-view">
-                        <h2 className="view-heading">Add tasks</h2>
-                          
+                        <h2 className="view-heading">Edit Profile</h2>
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="button" value="Save"/>                          
                         <DashboardCard />
                     </div>
                 );
             }
         }
+        
+
         
         class AdministratorView extends React.Component {
             constructor(props) {
@@ -309,6 +326,9 @@ class Dashboard extends Component {
         );
         const PerformanceCardContent = () => (
             <div>
+               
+               
+                          
                 
             </div>
         );
