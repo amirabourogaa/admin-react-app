@@ -80,6 +80,10 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                    {" "}
+                    My Clients
+                  </span>
 
                 </div>
                 <Dashboard email={this.state.email} password={this.state.password}/>
@@ -111,6 +115,10 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                    {" "}
+                    My Clients
+                  </span>
                 </div>
                 <Board email={this.state.email} password={this.state.password}/>
 
@@ -140,6 +148,10 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
+                    {" "}
+                    My Clients
+                  </span>
                 </div>
                 <Messageform email={this.state.email} password={this.state.password}/>
               </div>
@@ -165,6 +177,10 @@ import client from '../Client/Client.jsx';
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
                     {" "}
                     My Employee
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
+                    {" "}
+                    My Clients
                   </span>
 
                 </div>
@@ -194,7 +210,7 @@ import client from '../Client/Client.jsx';
                     {" "}
                     My Employee
                   </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
                     {" "}
                     My Clients
                   </span>
