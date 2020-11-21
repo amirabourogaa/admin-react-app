@@ -172,8 +172,41 @@ import client from '../Client/Client.jsx';
               </div>
             );
           } 
-          }
+           else if (this.state.check === "client") {
+            return (
+              <div>
+                 <div className="navbar">
+                  <span className="logo" onClick={(e) => this.profile(e)}>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+                  </span>
+                  <span
+                    className="nav"
+                    className="nav-selected"
+                    onClick={(e) => this.Dashboard(e)}
+                  >
+                    My Dashboard
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                    {" "}
+                    My messages
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                    {" "}
+                    My Employee
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                    {" "}
+                    My Clients
+                  </span>
+
+                </div>
+                <Client email={this.state.email} password={this.state.password}/>
+              </div>
+            );
+          } 
         }
+      }
+      
       
     export default Navbar;
         
