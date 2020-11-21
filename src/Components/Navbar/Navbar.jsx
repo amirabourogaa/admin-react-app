@@ -96,7 +96,7 @@ import Client from '../Client/Client.jsx';
               <div>
                 <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
 
                   </span>
                   <span
@@ -130,7 +130,7 @@ import Client from '../Client/Client.jsx';
               <div>
                  <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
                   </span>
                   <span
                     className="nav"
@@ -161,7 +161,7 @@ import Client from '../Client/Client.jsx';
               <div>
                  <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
                   </span>
                   <span
                     className="nav"
@@ -193,7 +193,7 @@ import Client from '../Client/Client.jsx';
               <div>
                  <div className="navbar">
                   <span className="logo" onClick={(e) => this.profile(e)}>
-                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="40px"></img>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
                   </span>
                   <span
                     className="nav"
