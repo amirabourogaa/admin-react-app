@@ -19,6 +19,7 @@ import Chat from '../Chat/Chat.jsx';
           this.message = this.message.bind(this);
           this.Employee = this.Employee.bind(this);
           this.client = this.client.bind(this);
+          this.Chat = this.Chat.bind(this);
         }
         componentDidMount() {
           this.setState({
