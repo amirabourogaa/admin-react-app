@@ -56,6 +56,12 @@ import Chat from '../Chat/Chat.jsx';
             check: "Employee",
           });
         }
+        Chat(e) {
+          e.preventDefault();
+          this.setState({
+            check: "Chat",
+          });
+        }
       
       
         render() {
@@ -86,7 +92,10 @@ import Chat from '../Chat/Chat.jsx';
                     {" "}
                     My Clients
                   </span>
-
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
+                  </span>
                 </div>
                 <Dashboard email={this.state.email} password={this.state.password}/>
               </div>
@@ -121,6 +130,10 @@ import Chat from '../Chat/Chat.jsx';
                     {" "}
                     My Clients
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
+                  </span>
                 </div>
                 <Board email={this.state.email} password={this.state.password}/>
 
@@ -154,6 +167,10 @@ import Chat from '../Chat/Chat.jsx';
                     {" "}
                     My Clients
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
+                  </span>
                 </div>
                 <Messageform email={this.state.email} password={this.state.password}/>
               </div>
@@ -183,6 +200,10 @@ import Chat from '../Chat/Chat.jsx';
                   <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
                     {" "}
                     My Clients
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
                   </span>
 
                 </div>
@@ -215,6 +236,10 @@ import Chat from '../Chat/Chat.jsx';
                   <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
                     {" "}
                     My Clients
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
                   </span>
 
                 </div>
