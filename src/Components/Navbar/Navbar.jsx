@@ -4,7 +4,7 @@ import Dashboard from "../Dashboard/Dashboard.jsx";
 import Board from '../Profile/Board.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
-import Chat from '../Chat/Chat.jsx';
+import Chat from '../Live Chat/Chat.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -246,9 +246,44 @@ import Chat from '../Chat/Chat.jsx';
                 <Client email={this.state.email} password={this.state.password}/>
               </div>
             );
-          } 
+          }  else if (this.state.check === "Chat") {
+            return (
+              <div>
+                 <div className="navbar">
+                  <span className="logo" onClick={(e) => this.profile(e)}>
+                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
+                  </span>
+                  <span
+                    className="nav"
+                    className="nav-selected"
+                    onClick={(e) => this.Dashboard(e)}
+                  >
+                    My Dashboard
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                    {" "}
+                    My messages
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                    {" "}
+                    My Employee
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
+                    {" "}
+                    My Clients
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                    {" "}
+                    Live Chat
+                  </span>
+
+                </div>
+                <Chat email={this.state.email} password={this.state.password}/>
+              </div>
+            )
         }
       }
+    }
       
       
     export default Navbar;
