@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Messageform from '../Message/Messageform.jsx';
 import Dashboard from "../Dashboard/Dashboard.jsx";
-import Board from '../Profile/Board.jsx';
+import Profile from '../Profile/Profile.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
-import Chat from '../Live Chat/Chat.jsx';
+import Chat from '../Calendar/Chat.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -94,7 +94,7 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
                 </div>
                 <Dashboard email={this.state.email} password={this.state.password}/>
@@ -132,10 +132,10 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
                 </div>
-                <Board email={this.state.email} password={this.state.password}/>
+                <Profile email={this.state.email} password={this.state.password}/>
 
               </div>
             );
@@ -169,7 +169,7 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
                 </div>
                 <Messageform email={this.state.email} password={this.state.password}/>
@@ -203,7 +203,7 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
 
                 </div>
@@ -239,7 +239,7 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
 
                 </div>
@@ -274,7 +274,7 @@ import Chat from '../Live Chat/Chat.jsx';
                   </span>
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
-                    Live Chat
+                   My Calendar
                   </span>
 
                 </div>
