@@ -4,6 +4,7 @@ import Dashboard from "../Dashboard/Dashboard.jsx";
 import Board from '../Profile/Board.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
+import Chat from '../Chat/Chat.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
