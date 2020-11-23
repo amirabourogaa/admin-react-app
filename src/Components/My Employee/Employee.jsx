@@ -6,7 +6,6 @@ import React, { Component } from 'react';
       import TableBody from "./TableBody/index.jsx";
       import TableRow from "./TableRow/index.jsx";
       import TableRowHeader from "./TableRowHeader/index.jsx";
-      import Header from "./Header/index.jsx";
       import Row from "./Row/index.jsx";
       import Dropdown from "./Dropdown/index.jsx";
       import DropdownItemButton from "./DropdownItemButton/index.jsx";

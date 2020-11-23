@@ -1,50 +1,47 @@
-import React, { Component } from "react";
-import './style.css';
+import React, { Component } from 'react';
+import Header from './Header.jsx';
+import Noticias from './Newss.jsx';
+import Formulario from './Formularie.jsx';
 
 class Profile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            editing: false
-        };
-    }
+  state = {
+    noticias: []
+  }
 
-    onSubmit(event) {
-        event.preventDefault();
-        const text = this.textInput.value.trim();
-        if (text && this.props.onAdd) {
-            this.props.onAdd(text);
-        }
-        this.textInput.value = '';
-    }
+  componentDidMount() {
+    this.consultarNoticias();
+  }
 
-    setEditing(editing) {
+  consultarNoticias = (categoria = 'general') => {
+    console.log(categoria);
+    const API = '8167045aa28c41cf9c694c0449e340e2';
+    let url = `https://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=${API}`
+    fetch(url)
+      .then(respuesta => {
+        return respuesta.json();
+      })
+      .then(noticias => {
         this.setState({
-            editing
-        });
-    }
+          noticias: noticias.articles
+        })
+      })
+  }
 
-    render() {
-        if (!this.state.editing) {
-            return (
-                <button
-                    className="add-button"
-                    onClick={() => this.setEditing(true)}>
-                    Add a {this.props.type}...
-                </button>
-            );
-        }
-
-        return (
-            <form className="card add-form" onSubmit={e => this.onSubmit(e)}>
-                <input type="text" ref={input => (this.textInput = input)} />
-                <button>Add</button>
-                <button type="button" onClick={() => this.setEditing(false)}>
-                    Cancel
-                </button>
-            </form>
-        );
-    }
+  render() {
+    return (
+      <div className="contenedor-app">
+       <Header titulo="Noticias" />
+       <div className="container white contenedor-noticias">
+          <Formulario 
+            consultarNoticias={this.consultarNoticias}
+          />
+          <Noticias 
+            noticias={this.state.noticias}
+          />
+       </div>
+      </div>
+    );
+  }
 }
 
-export default  Profile;
+export default Profile;

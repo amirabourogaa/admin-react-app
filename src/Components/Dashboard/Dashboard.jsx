@@ -85,7 +85,6 @@ class Dashboard extends Component {
                             item1={"Add Client"}
                             item2={"Add Employee"}
                             item3={"Update Profile"}
-                            item4={"Calendar"}
                             setView={this.props.setView}
                         />
                         <div>
