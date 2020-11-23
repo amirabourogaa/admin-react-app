@@ -17,7 +17,6 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-console.log(path.join(__dirname, "../public/index.html"));
 app.use(express.static(path.join(__dirname, "../build"))); //needs to be changed to static path of you use
 
 app.use("/", indexRouter);
