@@ -5,6 +5,7 @@ import Profile from '../Profile/Profile.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
 import Chat from '../Calendar/Chat.jsx';
+import Tasks from '../Tasks/Tasks.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -20,6 +21,7 @@ import Chat from '../Calendar/Chat.jsx';
           this.Employee = this.Employee.bind(this);
           this.client = this.client.bind(this);
           this.Chat = this.Chat.bind(this);
+          this.Tasks = this.Tasks.bind(this);
         }
         componentDidMount() {
           this.setState({
