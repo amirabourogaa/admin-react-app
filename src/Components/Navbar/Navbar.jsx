@@ -5,6 +5,7 @@ import Profile from '../Profile/Profile.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
 import Chat from '../Calendar/Chat.jsx';
+import Task from '../Tasks/Task.jsx';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -20,6 +21,7 @@ import Chat from '../Calendar/Chat.jsx';
           this.Employee = this.Employee.bind(this);
           this.client = this.client.bind(this);
           this.Chat = this.Chat.bind(this);
+          this.tasks = this.tasks.bind(this);
         }
         componentDidMount() {
           this.setState({
@@ -62,6 +64,12 @@ import Chat from '../Calendar/Chat.jsx';
             check: "Chat",
           });
         }
+        tasks(e) {
+          e.preventDefault();
+          this.setState({
+            check: "tasks",
+          });
+        }
       
       
         render() {
@@ -95,6 +103,10 @@ import Chat from '../Calendar/Chat.jsx';
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
                    My Calendar
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
                   </span>
                 </div>
                 <Dashboard email={this.state.email} password={this.state.password}/>
@@ -134,6 +146,10 @@ import Chat from '../Calendar/Chat.jsx';
                     {" "}
                    My Calendar
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
+                  </span>
                 </div>
                 <Profile email={this.state.email} password={this.state.password}/>
 
@@ -171,6 +187,10 @@ import Chat from '../Calendar/Chat.jsx';
                     {" "}
                    My Calendar
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
+                  </span>
                 </div>
                 <Messageform email={this.state.email} password={this.state.password}/>
               </div>
@@ -204,6 +224,10 @@ import Chat from '../Calendar/Chat.jsx';
                   <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
                     {" "}
                    My Calendar
+                  </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
                   </span>
 
                 </div>
@@ -241,6 +265,10 @@ import Chat from '../Calendar/Chat.jsx';
                     {" "}
                    My Calendar
                   </span>
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
+                  </span>
 
                 </div>
                 <Client email={this.state.email} password={this.state.password}/>
@@ -276,14 +304,56 @@ import Chat from '../Calendar/Chat.jsx';
                     {" "}
                    My Calendar
                   </span>
-
+                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                    {" "}
+                   My Tasks
+                  </span>
                 </div>
                 <Chat email={this.state.email} password={this.state.password}/>
               </div>
             )
-        }
+        } else if (this.state.check === "tasks") {
+          return (
+            <div>
+               <div className="navbar">
+                <span className="logo" onClick={(e) => this.profile(e)}>
+                < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
+                </span>
+                <span
+                  className="nav"
+                  className="nav-selected"
+                  onClick={(e) => this.Dashboard(e)}
+                >
+                  My Dashboard
+                </span>
+                <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
+                  {" "}
+                  My messages
+                </span>
+                <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
+                  {" "}
+                  My Employee
+                </span>
+                <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
+                  {" "}
+                  My Clients
+                </span>
+                <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
+                  {" "}
+                 My Calendar
+                </span>
+                <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
+                  {" "}
+                 My Tasks
+                </span>
+              </div>
+              <Task email={this.state.email} password={this.state.password}/>
+           
+            </div>
+          )
       }
     }
+  }
       
       
     export default Navbar;
