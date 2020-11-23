@@ -75,7 +75,7 @@ body {
 .navbar {
   background-color:#8594c7;
   margin: 0px;
-  padding: 7px;
+ 
   display: flex;
   justify-content: flex-end;
   align-items: center;
