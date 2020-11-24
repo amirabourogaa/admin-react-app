@@ -1,5 +1,13 @@
+
+import { Button, Card } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
+
+
+
+
+
+
 
 
 class Land extends React.Component {
@@ -21,19 +29,28 @@ class Land extends React.Component {
   render() {
     return (
       <div>
+       
           <center>
         {!this.state.goToUserLogin ? (
           <div>
               <br></br><br></br><br></br>
-            
-            <h3 className="landP">
-              Plan and schedule your workflow online. Increase your team
-              efficiency.
-            </h3>
-            <br />
-            <button className="landB1" onClick={this.toUserLogin}>
+              <Card className="bg-dark text-white">
+  
+  <Card.ImgOverlay>
+    <Card.Title>Plan and schedule your workflow online. Increase your team
+              efficiency.</Card.Title>
+              <Button  variant="danger" className="landB1" onClick={this.toUserLogin}>
             Join as Admin
-            </button>
+            </Button>
+            
+    
+  </Card.ImgOverlay>
+</Card>
+            
+            <br />
+            
+           
+            
           
           </div>
         ) : this.state.goToUserLogin ? (

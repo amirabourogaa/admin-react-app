@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import {todos} from './todos.json';
+import '../Dashboard/style.css'
 
 
 
@@ -40,6 +41,7 @@ class Dashboard extends Component {
                     case "overview":
                         return (
                         <div id="dashboard">
+                           
                             <Sidebar setView={this.setView} />
                             <Overview />
                         </div>
