@@ -312,7 +312,7 @@ import Task from '../Tasks/Task.jsx';
                 <Chat email={this.state.email} password={this.state.password}/>
               </div>
             )
-        } else if (this.state.check === "tasks") {
+        } else if (this.state.check === "Tasks") {
           return (
             <div>
                <div className="navbar">
