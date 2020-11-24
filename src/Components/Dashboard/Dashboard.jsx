@@ -85,6 +85,7 @@ class Dashboard extends Component {
                             item1={"Add Client"}
                             item2={"Add Employee"}
                             item3={"Update Profile"}
+                            item4 ={"Add Admin"}
                             setView={this.props.setView}
                         />
                         <div>
@@ -253,7 +254,7 @@ class Dashboard extends Component {
             render() {
                 return (
                     <div className="dash-view">
-                        <h2 className="view-heading">Edit Profile</h2>
+                        <h2 className="view-heading">Update Profile</h2>
                         <input type="text" placeholder="email" required/><br></br><br></br>
                         <input type="password" placeholder="Password" required/><br></br><br></br>
                         <input type="password" placeholder="NewPassword" required/><br></br><br></br>
@@ -274,7 +275,9 @@ class Dashboard extends Component {
             render() {
                 return (
                     <div className="dash-view">
-                        <h2 className="view-heading">Calendar</h2>
+                       <h2 className="view-heading">Add Admin</h2>
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
                         <DashboardCard />
                     </div>
                 );
