@@ -1,5 +1,8 @@
+
+import { Button } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
+import { Carousel } from 'react-bootstrap';
 
 
 class Land extends React.Component {
@@ -21,6 +24,7 @@ class Land extends React.Component {
   render() {
     return (
       <div>
+       
           <center>
         {!this.state.goToUserLogin ? (
           <div>
@@ -30,10 +34,12 @@ class Land extends React.Component {
               Plan and schedule your workflow online. Increase your team
               efficiency.
             </h3>
+           
             <br />
-            <button className="landB1" onClick={this.toUserLogin}>
+            {/* <Button variant="primary">Primary</Button>{' '} */}
+            <Button variant="primary" className="landB1" onClick={this.toUserLogin}>
             Join as Admin
-            </button>
+            </Button>
           
           </div>
         ) : this.state.goToUserLogin ? (

@@ -5,7 +5,8 @@ import Profile from '../Profile/Profile.jsx';
 import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
 import Chat from '../Calendar/Chat.jsx';
-import Task from '../Tasks/Task.jsx';
+import Task from '../Tasks/task.jsx';
+
     class Navbar extends Component {
         constructor(props) {
           super(props);

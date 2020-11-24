@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar.jsx";
 
@@ -42,6 +43,7 @@ class Login extends Component {
         return (
           <div>
         <Navbar/>
+       
         </div>
         )
       }
