@@ -25,6 +25,7 @@ class AddTask extends Component {
       EmployeeName: this.state.EmployeeName,
       ClientName: this.state.ClientName,
       DueDate: this.state.DueDate,
+      status: "fase 1",
     };
     axios.post("http://localhost:5500/task/create", obj).then((res) => {
       console.log(res);
