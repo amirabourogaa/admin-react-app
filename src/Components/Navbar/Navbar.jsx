@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import { FcSmartphoneTablet } from "react-icons/fc";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import {Route, BrowserRouter as Router , Link} from 'react-router-dom';
-
+import '../Navbar/style.css';
     class Navbar extends Component {
         constructor(props) {
           super(props);
@@ -74,7 +74,9 @@ import {Route, BrowserRouter as Router , Link} from 'react-router-dom';
            <div>  
             <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
  
-  <a class="navbar-brand" >Navbar</a>
+  <a class="navbar-brand" >
+    <FcSmartphoneTablet/>
+  </a>
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -84,7 +86,9 @@ import {Route, BrowserRouter as Router , Link} from 'react-router-dom';
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
       
-        <a class="nav-link" href="/dashboard"> My Dashboard
+        <a class="nav-link" href="/dashboard"> 
+        😈
+        My Dashboard
           <span class="sr-only">(current)</span>
         </a>
         

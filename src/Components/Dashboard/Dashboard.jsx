@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import {todos} from './todos.json';
+import '../Dashboard/style.css'
 
 
 

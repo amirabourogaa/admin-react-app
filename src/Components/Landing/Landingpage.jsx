@@ -1,5 +1,5 @@
 
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
 
@@ -34,18 +34,22 @@ class Land extends React.Component {
         {!this.state.goToUserLogin ? (
           <div>
               <br></br><br></br><br></br>
-             
-            <h3 className="landP">
-              Plan and schedule your workflow online. Increase your team
-              efficiency.
-            </h3>
-           
-            <br />
-            
-            <Button  variant="danger" className="landB1" onClick={this.toUserLogin}>
+              <Card className="bg-dark text-white">
+  
+  <Card.ImgOverlay>
+    <Card.Title>Plan and schedule your workflow online. Increase your team
+              efficiency.</Card.Title>
+              <Button  variant="danger" className="landB1" onClick={this.toUserLogin}>
             Join as Admin
             </Button>
             
+    
+  </Card.ImgOverlay>
+</Card>
+            
+            <br />
+            
+           
             
           
           </div>
