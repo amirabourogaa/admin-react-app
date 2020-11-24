@@ -1,85 +1,145 @@
 body {
-    background-image: url("http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
-  }
+  background-image: url("http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+.phase1 {
+  width: 25%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  display: block;
+  margin-left: -775px;
+}
+.phase2 {
+  width: 25%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  display: block;
+  margin-left: -257px;
+}
 
-  #form{
-    width:400px;
-    height:350px;
-    background-color:rgb(112, 141, 112);
-    top:100%;
-    left:100%;
-   
-    border-radius:5px;
-    padding:5px;
-  }
+.phase3 {
+  width: 25%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  display: block;
+  margin-left: 257px;
+}
+.phase4 {
+  width: 25%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  display: block;
+  margin-left: 775px;
+}
 
-  input{       
-    border:2px solid #EEE;
-    border-radius:5px;
-    background-color:#EEE;
-    padding:10px;
-    margin:0 auto;
-    margin-top:5px;
-    font-size:18px;
-    font-family:sans-serif;
-    width:200px;
-    outline:none;
-  }
-  input[type="submit"]{
-    border:0;
-    margin:0 auto;
-    margin-top:15px;
-    background:#5971be;
-    color:#FFF;
-    font-size:18px;
-    padding:10px;
-    border-radius:5px;
-    width:270px;
-    outline:none;
-    cursor:pointer;
-  }
-  input[type="add"]{
-    border:0;
-    margin:0 auto;
-    margin-top:15px;
-    background:#393d4b;
-    color:#FFF;
-    font-size:18px;
-    padding:10px;
-    border-radius:5px;
-    width:270px;
-    outline:none;
-    cursor:pointer;
-  }
-  
-  button{
-    border:0;
-    margin:0 auto;
-    margin-top:15px;
-    background:#8693be;
-    color:#FFF;
-    font-size:18px;
-    padding:10px;
-    border-radius:5px;
-    width:270px;
-    outline:none;
-    cursor:pointer;
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+th {
+  width: 25%;
+}
 
-  }
+.Tasks {
+  float: right;
+  background-color: white;
+  width: 500px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+#form {
+  width: 400px;
+  height: 350px;
+  background-color: rgb(112, 141, 112);
+  top: 100%;
+  left: 100%;
+
+  border-radius: 5px;
+  padding: 5px;
+}
+.input {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 5px;
+  font-size: 18px;
+  font-family: sans-serif;
+  width: 200px;
+  outline: none;
+}
+
+input {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 5px;
+  font-size: 18px;
+  font-family: sans-serif;
+  width: 200px;
+  outline: none;
+}
+input[type="submit"] {
+  border: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+  background: #5971be;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 270px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="add"] {
+  border: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+  background: #393d4b;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 270px;
+  outline: none;
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  margin: 0 auto;
+  margin-top: 15px;
+  background: #8693be;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 270px;
+  outline: none;
+  cursor: pointer;
+}
 
 .navbar {
-  background-color:#8594c7;
+  background-color: #8594c7;
   margin: 0px;
- 
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-family: 'Francois One';
+  font-family: "Francois One";
 }
 .nav {
   padding: 10px;
@@ -94,22 +154,22 @@ body {
   font-weight: bold;
   margin-right: 5px;
   font-size: 1.3em;
-  cursor:pointer;
+  cursor: pointer;
 }
 .logo {
   font-weight: bold;
   font-size: 1.9em;
   margin-right: auto;
   margin-left: 10px;
-  font-family: 'Francois One';
+  font-family: "Francois One";
   color: #ffffff;
 }
 input[type="message"] {
   margin: 10px 0px;
   height: 30px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   color: #1e1e1e;
   font: 400 1rem "proxima-nova", sans-serif;
   width: 30%;
@@ -120,7 +180,7 @@ input[type="message"] {
   transition: border-color 0.2s ease-in-out;
 }
 input[type="message"]:focus {
-  border: 1px solid #AF9570;
+  border: 1px solid #af9570;
   outline: none !important;
 }
 
@@ -139,7 +199,8 @@ input[type="message"]:focus {
   margin: 1px 1px 1px 0;
 }
 
-.MessageForm input, .MessageForm button {
+.MessageForm input,
+.MessageForm button {
   background: #fff;
   border-radius: 3px;
   border: 1px solid #ccc;
@@ -153,15 +214,12 @@ input[type="message"]:focus {
 .MessageForm input {
   padding: 0 0 0 4px;
 }
-.dash{
-  background:space;
+.dash {
+  background: space;
   background-color: #bbdea7;
   width: 280px;
   height: 400px;
-  
 }
-
-
 
 ::-webkit-scrollbar {
   display: none;
@@ -202,7 +260,7 @@ input[type="message"]:focus {
   margin-top: 10px;
   font-size: 2em;
   font-weight: 600;
-	color:#4834d4;
+  color: #4834d4;
 }
 
 .subtitle {
@@ -249,9 +307,10 @@ input[type="message"]:focus {
   color: white;
   border: none;
   border-radius: 5px;
-	transition: all 0.3s;
-} .full-btn:hover {
-	background: rgba(95, 15, 255, 0.76);
+  transition: all 0.3s;
+}
+.full-btn:hover {
+  background: rgba(95, 15, 255, 0.76);
 }
 .dash-view {
   margin: 40px;
@@ -263,18 +322,15 @@ input[type="message"]:focus {
 }
 
 .table-container {
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	flex-basis: 100%;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-evenly;
-	align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
-
-
 
 .chat {
   width: 300px;
@@ -282,15 +338,13 @@ input[type="message"]:focus {
   max-height: 500px;
   z-index: 2;
   overflow: hidden;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
-  background: rgba(0, 0, 0, .5);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-
-
 
 .chat-title {
   flex: 0 1 45px;
@@ -301,29 +355,25 @@ input[type="message"]:focus {
   text-transform: uppercase;
   text-align: left;
   padding: 10px 10px 10px 50px;
- 
-  
-    color: rgba(255, 255, 255, .5);
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-  
-  .avatar {
-    position: absolute;
-    z-index: 1;
-    top: 8px;
-    left: 9px;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    border: 2px solid rgba(255, 255, 255, 0.24);
-    
-   
-  }
 
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.avatar {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 9px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}
 
 .message-box {
   flex: 0 1 40px;
@@ -331,7 +381,6 @@ input[type="message"]:focus {
   background: rgba(0, 0, 0, 0.3);
   padding: 10px;
   position: relative;
-
 }
 
 .App-header {
@@ -347,11 +396,10 @@ input[type="message"]:focus {
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-
-
-    
-    
