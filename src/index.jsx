@@ -6,8 +6,12 @@ import Land from "./Components/Landing/Landingpage.jsx";
 import './Components/My Employee/App.css';
 import './Components/Profile/style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
-import 'bootstrap-css-only/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
+//import 'bootstrap-css-only/css/bootstrap.min.css'; 
+//import 'mdbreact/dist/css/mdb.css';
+
+
+
+
 
 class App extends React.Component {
     render(){

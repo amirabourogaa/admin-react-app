@@ -6,6 +6,7 @@ import Employee from '../My Employee/Employee.jsx';
 import Client from '../Client/Client.jsx';
 import Chat from '../Calendar/Chat.jsx';
 import Task from '../Tasks/task.jsx';
+import "bootswatch/dist/lux/bootstrap.min.css";
 
     class Navbar extends Component {
         constructor(props) {
@@ -349,7 +350,7 @@ import Task from '../Tasks/task.jsx';
                 </span>
               </div>
               <Task email={this.state.email} password={this.state.password}/>
-           
+
             </div>
           )
       }
