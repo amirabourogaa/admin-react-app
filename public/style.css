@@ -1,11 +1,14 @@
 body {
-  background-image: url("https://magzjam.com/wp-content/uploads/2017/05/file-2.jpeg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-image: url("https://lh3.googleusercontent.com/proxy/v1oy5nQeVAih26AqCG1qIHt_cQlL8daKhK8QxOpVjmzYcrit_S2a7JcfKSf-LSWaj8bePdGY8l8qkI-rLAZAP3l2DJgB7BTS3gd-uSVj");
+ 
   background-size: cover;
-  overflow: hidden;
+  min-width:  100%;
+  min-height:  100%;
+ 
+  background-repeat: no-repeat;
+  
 }
+
 .phase1 {
   width: 25%;
   margin-top: 5px;

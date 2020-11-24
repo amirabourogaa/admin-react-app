@@ -2,7 +2,8 @@
 import { Button } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
-import { Carousel } from 'react-bootstrap';
+import { MDBBtn } from "mdbreact";
+
 
 
 class Land extends React.Component {
@@ -37,9 +38,11 @@ class Land extends React.Component {
            
             <br />
             {/* <Button variant="primary">Primary</Button>{' '} */}
-            <Button variant="primary" className="landB1" onClick={this.toUserLogin}>
+            <Button  variant="danger" className="landB1" onClick={this.toUserLogin}>
             Join as Admin
             </Button>
+            
+            
           
           </div>
         ) : this.state.goToUserLogin ? (
