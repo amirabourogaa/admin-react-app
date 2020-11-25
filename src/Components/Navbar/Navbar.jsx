@@ -117,10 +117,12 @@ import '../Navbar/style.css';
    
   </div>
 </nav>
+</div>
 
-           </div>
+
+
          )
-          
+
       }
     }
   

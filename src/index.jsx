@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./Components/Login/Login.jsx";
-import { BrowserRouter as Router , Switch , Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Land from "./Components/Landing/Landingpage.jsx";
 import './Components/My Employee/App.css';
 import './Components/Profile/style.css';
@@ -66,7 +66,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render (
-    <App/>,
-    document.getElementById("root")
-)
+ReactDOM.render(<App />, document.getElementById("root"));
