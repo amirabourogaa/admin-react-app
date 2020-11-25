@@ -109,7 +109,7 @@ import '../Navbar/style.css';
       </li>
      
       <li class="nav-item">
-        <a class="nav-link" href="/tasks">My Tasks</a>
+        <a class="nav-link" href="/tasks">Give Tasks</a>
       </li>
 
       

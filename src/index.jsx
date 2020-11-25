@@ -16,7 +16,7 @@ import Chat from './Components/Calendar/Chat';
 import Task from './Components/Tasks/task';
 import "bootswatch/dist/lux/bootstrap.min.css";
 // import 'bootstrap-css-only/css/bootstrap.min.css'; 
-// import 'mdbreact/dist/css/mdb.css';
+import 'mdbreact/dist/css/mdb.css';
 import 'antd/dist/antd.css';
 import {Avatar} from 'antd';
 import { UserOutlined } from '@ant-design/icons';

@@ -220,6 +220,7 @@ class Overview extends React.Component {
     
     return (
       <div className="dash-view">
+          
         <center>
           <Card className="bg-dark text-white" style = {{height : '600px'}}>
             <Card.ImgOverlay>
@@ -244,8 +245,9 @@ class Overview extends React.Component {
             <input type="text" placeholder="PhoneNumber" required />
             <br></br>
             <br></br>
+            <MDBBtn color="warning">Add</MDBBtn>
 
-            {/* <input type="button" value="Add" /> */}
+           
            
           </form>
             </Card.ImgOverlay>
@@ -267,7 +269,13 @@ class ScheduleView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <h2 className="view-heading">Add Employee</h2>
+        <Card className="bg-dark text-white" style = {{height : '600px'}}>
+            <Card.ImgOverlay>
+              <Card.Title>
+              <h2 className="view-heading" style = {{color :'gold'}}>Add Employee</h2>
+              </Card.Title>
+              <form>
+              
           <br></br>
           <input type="text" placeholder="FirstName" required />
           <br></br>
@@ -285,8 +293,20 @@ class ScheduleView extends React.Component {
           <br></br>
           <br></br>
 
-          <input type="button" value="Add" />
-        </center>
+          <MDBBtn color="warning">Add</MDBBtn>
+ 
+            <br></br>
+            <br></br>
+            <br></br>
+
+           
+           
+          </form>
+            </Card.ImgOverlay>
+          </Card>
+
+          
+                 </center>
         <DashboardCard />
       </div>
     );
@@ -300,8 +320,16 @@ class PerformanceView extends React.Component {
   render() {
     return (
       <div className="dash-view">
-        <h2 className="view-heading">Edit Profile</h2>
-        <input type="text" placeholder="email" required />
+           <center>
+        <Card className="bg-dark text-white" style = {{height : '600px'}}>
+            <Card.ImgOverlay>
+              <Card.Title>
+              <h2 className="view-heading" style = {{color :'gold'}}>Edit Profile</h2>
+              </Card.Title>
+              <form>
+              
+          <br></br>
+          <input type="text" placeholder="email" required />
         <br></br>
         <br></br>
         <input type="password" placeholder="Password" required />
@@ -314,6 +342,24 @@ class PerformanceView extends React.Component {
         <br></br>
         <br></br>
         <input type="button" value="Save" />
+       <br></br>
+          <br></br>
+
+          <MDBBtn color="warning">Add</MDBBtn>
+ 
+            <br></br>
+            <br></br>
+            <br></br>
+
+           
+           
+          </form>
+            </Card.ImgOverlay>
+          </Card>
+
+          
+                 </center>
+        
         <DashboardCard />
       </div>
     );
