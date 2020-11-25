@@ -17,16 +17,33 @@ import Task from './Components/Tasks/task';
 import "bootswatch/dist/lux/bootstrap.min.css";
 // import 'bootstrap-css-only/css/bootstrap.min.css'; 
 // import 'mdbreact/dist/css/mdb.css';
-
-
-
-
+import 'antd/dist/antd.css';
+import {Avatar} from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+ import ProfilePicChanger from './Components/ProfilePicChanger'
+import pic1 from '../src/pics/tiger.PNG'
+import pic2 from '../src/pics/suited.jpg'
 
 class App extends React.Component {
+    constructor(props){
+            super(props);
+            this.state = {
+                profileImage : ''
+            }
+    }
+    handleImage =(profileImage) =>{
+        this.setState ({
+            profileImage
+        })
+    }
+
     render(){
         return (
             <div>
                 <Navbar/>
+                {/* <Avatar size={64} icon={<UserOutlined />} src={this.state.profileImage} />
+                <ProfilePicChanger handleImageChange = {this.handleImage} pic1={pic1} pic2={pic2}/> */}
+               
         <Router>
         <div>
             

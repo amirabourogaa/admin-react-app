@@ -150,9 +150,9 @@ import React, { Component } from 'react';
                     ))}
                   </Dropdown>
                  <br></br> <br></br><br></br><br></br>
-                  <ResetButton resetTable={this.resetTable}>
-                    Reset Table
-                </ResetButton>
+                  <Dropdown type="Reset Table" resetTable={this.resetTable}>
+                    
+                </Dropdown>
                 </Row>
                 <Row>
                   <SearchForm
