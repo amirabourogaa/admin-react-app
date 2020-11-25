@@ -1,8 +1,4 @@
-/* navbar height */
-:root {
-  --navbar-height: 40px;
-  --navbar-bg-color: #6aa6ff;
-}
+
 
 @media screen and (max-width: 736px) {
   .navbar-title {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header.jsx';
 import Noticias from './Newss.jsx';
 import Formulario from './Formularie.jsx';
+import Navbar from "../Navbar/Navbar.jsx";
 
 class Profile extends Component {
   state = {
@@ -30,6 +31,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="contenedor-app">
+        <Navbar/>
        <Header titulo="Noticias" />
        <div className="container white contenedor-noticias">
           <Formulario 

@@ -8,26 +8,26 @@ import "./Components/Profile/style.css";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 
 class App extends React.Component {
-  render() {
-    return (
-      <div>
-        {localStorage.getItem("token") === null ? (
-          <Router>
-            <div>
-              <Land />
-              <Switch>
-                <Route path="/Login" exact component={Login} />
-              </Switch>
-            </div>
-          </Router>
-        ) : (
-          <div>
-            <Navbar />
-          </div>
-        )}
-      </div>
-    );
-  }
+render() {
+return (
+<div>
+{localStorage.getItem("token") === null ? (
+<Router>
+<div>
+<Land />
+<Switch>
+<Route path="/Login" exact component={Login} />
+</Switch>
+</div>
+</Router>
+) : (
+<div>
+<Navbar />
+</div>
+)}
+</div>
+);
+}
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
