@@ -123,6 +123,96 @@ class UserProfileView extends React.Component {
 
         {/* 
                         {/* <img 
+
+            }
+        
+            setView(view) {
+                this.setState({ view: view });
+              
+            }
+                currentView(view) {
+                    this.setState({ view: view });
+                }
+                    profile(e) {
+                        e.preventDefault();
+                        this.setState({
+                          check: "profile",
+                        });
+                      }
+                   
+            
+        
+            render() {
+                switch(this.state.view) {
+                    case "overview":
+                        return (
+                        <div id="dashboard">
+                           
+                            <Sidebar setView={this.setView} />
+                            <Overview />
+                        </div>
+                    );
+                    case "schedule":
+                    return (
+                        <div id="dashboard">
+                            <Sidebar setView={this.setView} />
+                            <ScheduleView />
+                        </div>
+                    );
+                    case "performance":
+                    return (
+                        <div id="dashboard">
+                            <Sidebar setView={this.setView} />
+                            <PerformanceView />
+                        </div>
+                    );
+                case "administrator":
+                    return (
+                        <div id="dashboard">
+                            <Sidebar setView={this.setView} />
+                            <AdministratorView />
+                        </div>
+                    );
+                }
+            }
+        }
+        
+        class Sidebar extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            setView(view) {
+                this.props.setView(view);
+                console.log("level 2 " + view);
+            }
+            render() {
+                return (
+                    <div className="sidebar-menu">
+                        <UserProfileView  />
+                        <SidebarMenu
+                            item1={"Add Client"}
+                            item2={"Add Employee"}
+                            item3={"Update Profile"}
+                            item4 ={"Add Admin"}
+                            setView={this.props.setView}
+                        />
+                        <div>
+                        <button onClick={()=>{window.location.reload()}}><a>LOGOUT</a></button>
+                        </div>
+                    </div>
+                );
+            }
+        }
+        
+        class UserProfileView extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+        
+            render() {
+                return (
+                    <div className="user-profile">
+                        <img 
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ2wn18dnC8OmX7Qx49epjgoHREUBHEviB10griBGemOmkYQoK5g"
                             id="profile-pic"
                            
@@ -304,6 +394,26 @@ class ScheduleView extends React.Component {
           </form>
             </Card.ImgOverlay>
           </Card>
+        class PerformanceView extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div className="dash-view">
+                        <h2 className="view-heading">Update Profile</h2>
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
+                        <input type="button" value="Save"/>                          
+                        <DashboardCard />
+                    </div>
+                );
+            }
+        }
+        
+ 
 
           
                  </center>
@@ -365,6 +475,22 @@ class PerformanceView extends React.Component {
     );
   }
 }
+        class AdministratorView extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div className="dash-view">
+                       <h2 className="view-heading">Add Admin</h2>
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <DashboardCard />
+                    </div>
+                );
+            }
+        }
+        var currentView = "overview";
 
 class AdministratorView extends React.Component {
   constructor(props) {
