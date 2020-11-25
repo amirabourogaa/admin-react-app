@@ -140,19 +140,11 @@ import React, { Component } from 'react';
              <br></br><br></br><br></br><br></br>
               <Wrapper>
                 <Row>
-                  <Dropdown type="Sort"><br></br>
-                    {employeesKeys.map(key => (
-                      <DropdownItemButton
-                        key={key}
-                        name={key}
-                        function={this.sortCriteria}
-                      />
-                    ))}
-                  </Dropdown>
+                  
                  <br></br> <br></br><br></br><br></br>
-                  <Dropdown type="Reset Table" resetTable={this.resetTable}>
-                    
-                </Dropdown>
+                  <ResetButton  resetTable={this.resetTable}>
+                  Reset Table
+                </ResetButton>
                 </Row>
                 <Row>
                   <SearchForm
