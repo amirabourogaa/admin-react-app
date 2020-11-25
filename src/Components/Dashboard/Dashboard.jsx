@@ -5,7 +5,33 @@ import "../Dashboard/style.css";
 
 import {  Card } from 'react-bootstrap';
 import { MDBBtn } from "mdbreact";
+import axios from "axios";
+import Swal from "sweetalert2";
+class Dashboard extends Component {
+constructor(props) {
+super(props);
+this.state = {
+view: "overview",
+username: "",
+usertitle: "",
+};
+this.setView = this.setView.bind(this);
+this.currentView = this.currentView.bind(this);
+this.profile = this.profile.bind(this);
+}
 
+setView(view) {
+this.setState({ view: view });
+}
+currentView(view) {
+this.setState({ view: view });
+}
+profile(e) {
+e.preventDefault();
+this.setState({
+check: "profile",
+});
+}
 
 class Dashboard extends Component {
     
@@ -547,3 +573,4 @@ const PerformanceCardContent = () => <div></div>;
 const AdministratorCardContent = () => <div></div>;
 
 export default Dashboard;
+
