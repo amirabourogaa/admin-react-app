@@ -7,36 +7,9 @@ import {  Card } from 'react-bootstrap';
 import { MDBBtn } from "mdbreact";
 import axios from "axios";
 import Swal from "sweetalert2";
-class Dashboard extends Component {
-constructor(props) {
-super(props);
-this.state = {
-view: "overview",
-username: "",
-usertitle: "",
-};
-this.setView = this.setView.bind(this);
-this.currentView = this.currentView.bind(this);
-this.profile = this.profile.bind(this);
-}
 
-setView(view) {
-this.setState({ view: view });
-}
-currentView(view) {
-this.setState({ view: view });
-}
-profile(e) {
-e.preventDefault();
-this.setState({
-check: "profile",
-});
-}
 
 class Dashboard extends Component {
-    
-    
-    
   constructor(props) {
     super(props);
     this.state = {
@@ -149,7 +122,6 @@ class UserProfileView extends React.Component {
 
         {/* 
                         {/* <img 
-
             }
         
             setView(view) {
@@ -420,25 +392,7 @@ class ScheduleView extends React.Component {
           </form>
             </Card.ImgOverlay>
           </Card>
-        class PerformanceView extends React.Component {
-            constructor(props) {
-                super(props);
-            }
-            render() {
-                return (
-                    <div className="dash-view">
-                        <h2 className="view-heading">Update Profile</h2>
-                        <input type="text" placeholder="email" required/><br></br><br></br>
-                        <input type="password" placeholder="Password" required/><br></br><br></br>
-                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
-                        <input type="password" placeholder="NewPassword" required/><br></br><br></br>
-                        <input type="button" value="Save"/>                          
-                        <DashboardCard />
-                    </div>
-                );
-            }
-        }
-        
+       
  
 
           
@@ -518,19 +472,6 @@ class PerformanceView extends React.Component {
         }
         var currentView = "overview";
 
-class AdministratorView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className="dash-view">
-       
-      </div>
-    );
-  }
-}
-var currentView = "overview";
 
 class DashboardCard extends React.Component {
   constructor(props) {
@@ -573,4 +514,3 @@ const PerformanceCardContent = () => <div></div>;
 const AdministratorCardContent = () => <div></div>;
 
 export default Dashboard;
-
