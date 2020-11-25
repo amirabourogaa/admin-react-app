@@ -1,54 +1,86 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar.jsx";
+import axios from "axios";
 
 class Login extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        email: "",
-        password: "",
-        view : "main",
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      view: "main",
+    };
+    this.changeView = this.changeView.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  }
+  changeView(e) {
+    this.setState({ view: e.target.value });
+  }
+
+  onSubmit(e) {
+    let obj = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+    if (obj.password.length < 8) {
+      return alert("Please enter a password longer than 8 characters");
+    }
+    axios.post("http://localhost:5500/admin/login", obj).then((res) => {
+      if (res.data !== false) {
+        localStorage.setItem("email", obj.email);
+        localStorage.setItem("token", res.data);
+        window.location.reload();
+      } else {
+        return alert("password or email are incorrect");
       }
-      this.changeView = this.changeView.bind(this);
-    }
-  
-    handleChange(e) {
-      this.setState({
-        [e.target.id]: e.target.value,
-      });
-    }
-    changeView(e) {
-      this.setState({ view: e.target.value });
-    }
-    
-    render() {
-      if (this.state.view === "main") {
-        return (
-          <div>
-            <center>
+    });
+    e.preventDefault();
+  }
+
+  render() {
+    if (this.state.view === "main") {
+      return (
+        <div>
+          <center>
+            <br></br> <br></br>
+            <form id="form">
+              <h1>Hello Boss </h1>
+              <input
+                required
+                type="text"
+                placeholder="email"
+                onChange={(e) => this.setState({ email: e.target.value })}
+                value={this.state.email}
+              />
               <br></br> <br></br>
-             <form id="form">
-             <h1>Hello Boss </h1>
-             <input type="text" placeholder="email" onChange={(e)=>this.setState({email:e.target.value})} value={this.state.email}/><br></br> <br></br>
-  
-               <input type="password" placeholder="Password" onChange={(e)=>this.setState({password:e.target.value})} value={this.state.password}/><br></br> <br></br>
-               <input type="button" value="Login" onClick={this.changeView} /><br></br> <br></br>
-               
-             </form>
-            </center>
-          </div>
-        )
-      } else if (this.state.view ==="Login" ) {
-        return (
-          <div>
-        <Navbar/>
+              <input
+                required
+                type="password"
+                placeholder="Password"
+                onChange={(e) => this.setState({ password: e.target.value })}
+                value={this.state.password}
+              />
+              <br></br> <br></br>
+              <input type="button" value="Login" onClick={this.onSubmit} />
+              <br></br> <br></br>
+            </form>
+          </center>
         </div>
-        )
-      }
+      );
+    } else if (this.state.view === "Login") {
+      return (
+        <div>
+          <Navbar />
+        </div>
+      );
     }
   }
-      
-    
-  
-  export default Login;
-  
+}
+
+export default Login;
