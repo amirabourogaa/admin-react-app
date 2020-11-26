@@ -561,9 +561,11 @@ class AdministratorView extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
   onSubmit(e) {
-    axios.post("http://localhost:5500/test/t", this.state).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .post("http://localhost:5500/admin/register/invitation", this.state)
+      .then((res) => {
+        console.log(res.data);
+      });
   }
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });

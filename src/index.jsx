@@ -59,7 +59,13 @@ class App extends React.Component {
             </div>
           </Router>
         ) : (
-          <Land />
+          <Router>
+            <Switch>
+              <Route path="/" exact exact component={Land} />
+
+              <Route path="/invitation/admin/*" component={Invitation}></Route>
+            </Switch>
+          </Router>
         )}
       </div>
     );
