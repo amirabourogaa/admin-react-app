@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FcSmartphoneTablet } from "react-icons/fc";
 import "bootswatch/dist/lux/bootstrap.min.css";
+
 import { Link } from "react-router-dom";
 import "../Navbar/style.css";
 class Navbar extends Component {
@@ -68,11 +69,13 @@ class Navbar extends Component {
     });
   }
 
+
   render() {
     return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand"></a>
+
 
           <button
             class="navbar-toggler"
@@ -117,5 +120,6 @@ class Navbar extends Component {
     );
   }
 }
+
 
 export default Navbar;

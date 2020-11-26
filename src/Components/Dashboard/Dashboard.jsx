@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from "react";
 
 import "../Dashboard/style.css";
 
@@ -6,6 +6,11 @@ import { Card } from "react-bootstrap";
 import { MDBBtn } from "mdbreact";
 import axios from "axios";
 import Swal from "sweetalert2";
+
+import { ActionOpacity } from "material-ui/svg-icons";
+
+
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -115,6 +120,8 @@ class UserProfileView extends React.Component {
   render() {
     return (
       <div className="user-profile">
+
+ 
         <h3 id="display-name">{this.props.username}</h3>
         <p className="subtitle">{this.props.usertitle}</p>
       </div>
@@ -172,9 +179,10 @@ class SidebarMenu extends React.Component {
       <div className="menu-items">
         <a
           className={this.state.overview}
-          href="#"
-          onClick={() => this.setBtnAndView("overview")}
-        >
+
+          href=""
+          onClick={() => this.setBtnAndView("overview")}>
+
           {this.props.item1}
         </a>
         <a
@@ -204,34 +212,41 @@ class Overview extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
-            <Card.ImgOverlay>
+
+          
+          <div  style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
+            <>
               <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Add Client
-                </h2>
+              <h3 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h3>
               </Card.Title>
               <form>
-                <br></br>
-                <input type="text" placeholder="FirstName" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="LastName" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="email" required />
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="Password" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="PhoneNumber" required />
-                <br></br>
-                <br></br>
-                <MDBBtn color="warning">Add</MDBBtn>
-              </form>
-            </Card.ImgOverlay>
-          </Card>
+            
+            <br></br>
+            <input type="text" placeholder="FirstName" required />
+            <br></br>
+            <br></br>
+            <input type="text" placeholder="LastName" required />
+            <br></br>
+            <br></br>
+            <input type="text" placeholder="email" required />
+            <br></br>
+            <br></br>
+            <input type="password" placeholder="Password" required />
+            <br></br>
+            <br></br>
+            <input type="text" placeholder="PhoneNumber" required />
+            <br></br>
+            <br></br>
+            <MDBBtn rounded color="warning">Add</MDBBtn>
+
+           
+           
+          </form>
+            </>
+          </div>
+
+          
+
         </center>
         <DashboardCard />
       </div>
@@ -247,40 +262,48 @@ class ScheduleView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+
+        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <Card.ImgOverlay>
               <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Add Employee
-                </h2>
+              <h2 className="view-heading" style = {{color :'#20B2AA'}}>Add Employee</h2>
               </Card.Title>
               <form>
-                <br></br>
-                <input type="text" placeholder="FirstName" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="LastName" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="email" required />
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="Password" required />
-                <br></br>
-                <br></br>
-                <input type="text" placeholder="PhoneNumber" required />
-                <br></br>
-                <br></br>
+              
+          <br></br>
+          <input type="text" placeholder="FirstName" required />
+          <br></br>
+          <br></br>
+          <input type="text" placeholder="LastName" required />
+          <br></br>
+          <br></br>
+          <input type="text" placeholder="email" required />
+          <br></br>
+          <br></br>
+          <input type="password" placeholder="Password" required />
+          <br></br>
+          <br></br>
+          <input type="text" placeholder="PhoneNumber" required />
+          <br></br>
+          <br></br>
 
-                <MDBBtn color="warning">Add</MDBBtn>
+          <MDBBtn color="warning">Add</MDBBtn>
+ 
+            <br></br>
+            <br></br>
+            <br></br>
 
-                <br></br>
-                <br></br>
-                <br></br>
-              </form>
-            </Card.ImgOverlay>
+           
+           
+          </form>
+          </Card.ImgOverlay>
           </Card>
-        </center>
+       
+ 
+
+          
+                 </center>
+
         <DashboardCard />
       </div>
     );
@@ -294,38 +317,42 @@ class PerformanceView extends React.Component {
   render() {
     return (
       <div className="dash-view">
-        <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+
+           <center>
+        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <Card.ImgOverlay>
               <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Edit Profile
-                </h2>
+              <h2 className="view-heading" style = {{color :'#20B2AA'}}>Edit Profile</h2>
               </Card.Title>
               <form>
-                <br></br>
-                <input type="text" placeholder="email" required />
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="Password" required />
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="NewPassword" required />
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="NewPassword" required />
-                <br></br>
-                <br></br>
-                <input type="button" value="Save" />
-                <br></br>
-                <br></br>
+              
+          <br></br>
+          <input type="text" placeholder="email" required />
+        <br></br>
+        <br></br>
+        <input type="password" placeholder="Password" required />
+        <br></br>
+        <br></br>
+        <input type="password" placeholder="NewPassword" required />
+        <br></br>
+        <br></br>
+        <input type="password" placeholder="NewPassword" required />
+        <br></br>
+        <br></br>
+       
+       <br></br>
+          <br></br>
 
-                <MDBBtn color="warning">Add</MDBBtn>
+          <MDBBtn color="warning">Edit</MDBBtn>
+ 
+            <br></br>
+            <br></br>
+            <br></br>
 
-                <br></br>
-                <br></br>
-                <br></br>
-              </form>
+           
+           
+          </form>
+
             </Card.ImgOverlay>
           </Card>
         </center>
@@ -335,26 +362,25 @@ class PerformanceView extends React.Component {
     );
   }
 }
-class AdministratorView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className="dash-view">
-        <h2 className="view-heading">Add Admin</h2>
-        <input type="text" placeholder="email" required />
-        <br></br>
-        <br></br>
-        <input type="password" placeholder="Password" required />
-        <br></br>
-        <br></br>
-        <DashboardCard />
-      </div>
-    );
-  }
-}
-var currentView = "overview";
+
+        class AdministratorView extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div className="dash-view">
+                       <h2 className="view-heading">Add Admin</h2>
+                        <input type="text" placeholder="email" required/><br></br><br></br>
+                        <input type="password" placeholder="Password" required/><br></br><br></br>
+                        <DashboardCard />
+                    </div>
+                );
+            }
+        }
+        var currentView = "overview";
+
+
 
 class DashboardCard extends React.Component {
   constructor(props) {
