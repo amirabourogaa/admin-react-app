@@ -2,12 +2,13 @@ import React, { Component,Fragment } from "react";
 
 import "../Dashboard/style.css";
 
-
-import {  Card } from 'react-bootstrap';
+import { Card } from "react-bootstrap";
 import { MDBBtn } from "mdbreact";
 import axios from "axios";
 import Swal from "sweetalert2";
+
 import { ActionOpacity } from "material-ui/svg-icons";
+
 
 
 class Dashboard extends Component {
@@ -17,8 +18,6 @@ class Dashboard extends Component {
       view: "overview",
       username: "",
       usertitle: "",
-      profileImage: "",
-     
     };
     this.setView = this.setView.bind(this);
     this.currentView = this.currentView.bind(this);
@@ -37,6 +36,7 @@ class Dashboard extends Component {
       check: "profile",
     });
   }
+
   handleImage = (profileImage) => {
     this.setState({
       profileImage,
@@ -96,14 +96,15 @@ class Sidebar extends React.Component {
           setView={this.props.setView}
         />
         <div>
-        <a href = '/'>
-          <MDBBtn color="warning"
-             onClick={() => {
+          <a href="/">
+            <MDBBtn
+              color="warning"
+              onClick={() => {
                 window.location.reload();
               }}
-          >
-        LOGOUT
-          </MDBBtn>
+            >
+              LOGOUT
+            </MDBBtn>
           </a>
         </div>
       </div>
@@ -117,12 +118,10 @@ class UserProfileView extends React.Component {
   }
 
   render() {
-  
     return (
       <div className="user-profile">
 
-       
-        {/* <ProfilePicChanger handleImageChange = {this.handleImage} pic1={pic1} pic2={pic2}/> */}
+ 
         <h3 id="display-name">{this.props.username}</h3>
         <p className="subtitle">{this.props.usertitle}</p>
       </div>
@@ -176,47 +175,44 @@ class SidebarMenu extends React.Component {
   }
 
   render() {
-      
     return (
       <div className="menu-items">
         <a
           className={this.state.overview}
+
           href=""
           onClick={() => this.setBtnAndView("overview")}>
+
           {this.props.item1}
         </a>
         <a
           className={this.state.schedule}
           href="#"
-          onClick={() => this.setBtnAndView("schedule")}>
+          onClick={() => this.setBtnAndView("schedule")}
+        >
           {this.props.item2}
         </a>
         <a
           className={this.state.performance}
           href="#"
-          onClick={() => this.setBtnAndView("performance")}>
+          onClick={() => this.setBtnAndView("performance")}
+        >
           {this.props.item3}
         </a>
-       
       </div>
     );
   }
 }
 
 class Overview extends React.Component {
-   
-      
   constructor(props) {
     super(props);
-    
-
   }
   render() {
-    
     return (
       <div className="dash-view">
-          
         <center>
+
           
           <div  style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <>
@@ -250,6 +246,7 @@ class Overview extends React.Component {
           </div>
 
           
+
         </center>
         <DashboardCard />
       </div>
@@ -265,6 +262,7 @@ class ScheduleView extends React.Component {
     return (
       <div className="dash-view">
         <center>
+
         <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <Card.ImgOverlay>
               <Card.Title>
@@ -305,6 +303,7 @@ class ScheduleView extends React.Component {
 
           
                  </center>
+
         <DashboardCard />
       </div>
     );
@@ -318,6 +317,7 @@ class PerformanceView extends React.Component {
   render() {
     return (
       <div className="dash-view">
+
            <center>
         <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <Card.ImgOverlay>
@@ -352,17 +352,17 @@ class PerformanceView extends React.Component {
            
            
           </form>
+
             </Card.ImgOverlay>
           </Card>
+        </center>
 
-          
-                 </center>
-        
         <DashboardCard />
       </div>
     );
   }
 }
+
         class AdministratorView extends React.Component {
             constructor(props) {
                 super(props);
@@ -379,6 +379,7 @@ class PerformanceView extends React.Component {
             }
         }
         var currentView = "overview";
+
 
 
 class DashboardCard extends React.Component {
