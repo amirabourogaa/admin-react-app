@@ -86,7 +86,9 @@ class AddTask extends Component {
           className="input"
         ></input>
         <br></br><br></br>
-        <button type="button" class="btn btn-outline-warning">Submit</button>
+        <MDBBtn size="lg" tag="a" floating social="pin">
+        ADD
+      </MDBBtn>
       </form>
       </center>
             </div>
