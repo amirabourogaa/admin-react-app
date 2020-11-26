@@ -72,7 +72,7 @@ import '../Navbar/style.css';
         render() {
          return (
            <div>  
-            <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav  style = {{backgroundColor: 'black'}} class="navbar navbar-expand-lg navbar-dark bg-dark">
  
   <a class="navbar-brand" >
    
