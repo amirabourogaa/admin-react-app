@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar.jsx";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import '../Login/style.css'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +57,7 @@ class Login extends Component {
         <div>
           <center>
             <br></br> <br></br>
+            
             <form id="form">
               <h1>Hello Boss </h1>
               <input
