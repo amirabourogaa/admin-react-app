@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Land from "./Components/Landing/Landingpage.jsx";
 import './Components/My Employee/App.css';
 import './Components/Profile/style.css';
-import '@fortawesome/fontawesome-free/css/all.min.css'; 
+
 import Messageform from './Components/Message/Messageform';
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Profile from './Components/Profile/Profile';
@@ -14,10 +14,12 @@ import Navbar from './Components/Navbar/Navbar'
 import Client from './Components/Client/Client';
 import Chat from './Components/Calendar/Chat';
 import Task from './Components/Tasks/task';
-import "bootswatch/dist/lux/bootstrap.min.css";
-// import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import "bootswatch/dist/sandstone/bootstrap.min.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'; 
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
-import 'antd/dist/antd.css';
+
+//import 'antd/dist/antd.css';
 import {Avatar} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
  import ProfilePicChanger from './Components/ProfilePicChanger'
@@ -39,7 +41,7 @@ class App extends React.Component {
 
     render(){
         return (
-            <div>
+            <div >
                 <Navbar/>
                 {/* <Avatar size={64} icon={<UserOutlined />} src={this.state.profileImage} />
                 <ProfilePicChanger handleImageChange = {this.handleImage} pic1={pic1} pic2={pic2}/> */}
@@ -64,7 +66,6 @@ class App extends React.Component {
     </div>
         )
     }
-
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));

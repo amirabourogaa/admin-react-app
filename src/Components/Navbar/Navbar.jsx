@@ -72,7 +72,7 @@ import '../Navbar/style.css';
         render() {
          return (
            <div>  
-            <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav  style = {{backgroundColor: 'black'}} class="navbar navbar-expand-lg navbar-dark bg-dark">
  
   <a class="navbar-brand" >
    
@@ -117,93 +117,11 @@ import '../Navbar/style.css';
    
   </div>
 </nav>
+</div>
 
 
-           </div>
+
          )
-          
-
-                </div>
-                <Client email={this.state.email} password={this.state.password}/>
-              </div>
-            );
-          }  else if (this.state.check === "Chat") {
-            return (
-              <div>
-                 <div className="navbar">
-                  <span className="logo" onClick={(e) => this.profile(e)}>
-                  < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
-                  </span>
-                  <span
-                    className="nav"
-                    className="nav-selected"
-                    onClick={(e) => this.Dashboard(e)}
-                  >
-                    My Dashboard
-                  </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
-                    {" "}
-                    My messages
-                  </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
-                    {" "}
-                    My Employee
-                  </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
-                    {" "}
-                    My Clients
-                  </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
-                    {" "}
-                   My Calendar
-                  </span>
-                  <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
-                    {" "}
-                   My Tasks
-                  </span>
-                </div>
-                <Chat email={this.state.email} password={this.state.password}/>
-              </div>
-            )
-        } else if (this.state.check === "Tasks") {
-          return (
-            <div>
-               <div className="navbar">
-                <span className="logo" onClick={(e) => this.profile(e)}>
-                < img src="https://cdn1.iconfinder.com/data/icons/digital-marketing-44/64/72-512.png" width="20px"></img>
-                </span>
-                <span
-                  className="nav"
-                  className="nav-selected"
-                  onClick={(e) => this.Dashboard(e)}
-                >
-                  My Dashboard
-                </span>
-                <span className="nav"  className="nav-selected" onClick={(e) => this.message(e)}>
-                  {" "}
-                  My messages
-                </span>
-                <span className="nav"  className="nav-selected" onClick={(e) => this.Employee(e)}>
-                  {" "}
-                  My Employee
-                </span>
-                <span className="nav"  className="nav-selected" onClick={(e) => this.client(e)}>
-                  {" "}
-                  My Clients
-                </span>
-                <span className="nav"  className="nav-selected" onClick={(e) => this.Chat(e)}>
-                  {" "}
-                 My Calendar
-                </span>
-                <span className="nav"  className="nav-selected" onClick={(e) => this.tasks(e)}>
-                  {" "}
-                 My Tasks
-                </span>
-              </div>
-              <Task email={this.state.email} password={this.state.password}/>
-           
-            </div>
-          )
 
       }
     }
