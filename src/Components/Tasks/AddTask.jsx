@@ -37,8 +37,14 @@ class AddTask extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <label name="Employeename">Employee name</label>
+      
+     
+        <div style ={{width:'300px',backgroundColor:'rgba(0, 0, 0, 0.85)',color:'white'}} class="jumbotron jumbotron-fluid">
+  <div>
+    <h1 style={{color :'white'}}>Give tasks</h1>
+    <center>
+    <form style={{fontSize:'18px'}} onSubmit={this.onSubmit}>
+    <label name="Employeename">Employee name</label>
         <input
           required
           name="EmployeeName"
@@ -48,7 +54,7 @@ class AddTask extends Component {
           className="input"
         ></input>
         <br></br>
-        <label name="Clientname">Client name</label>
+        <label name="Clientname">Client name</label><br></br>
         <input
           required
           name="ClientName"
@@ -60,7 +66,7 @@ class AddTask extends Component {
         <br></br>
         <label name="DueDate">
           <strong>Due date</strong>
-        </label>
+        </label><br></br>
         <input
           required
           name="DueDate"
@@ -68,11 +74,13 @@ class AddTask extends Component {
           onChange={this.onChange}
           className="input"
         ></input>
-        <br></br>
-        <button type="submit" className="">
-          Submit
-        </button>
+        <br></br><br></br>
+        <button type="button" class="btn btn-outline-warning">Submit</button>
       </form>
+      </center>
+  </div>
+</div>
+       
     );
   }
 }
