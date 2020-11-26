@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from "react";
+import React, { Component } from "react";
 
 import "../Dashboard/style.css";
 
@@ -6,10 +6,6 @@ import { Card } from "react-bootstrap";
 import { MDBBtn } from "mdbreact";
 import axios from "axios";
 import Swal from "sweetalert2";
-
-import { ActionOpacity } from "material-ui/svg-icons";
-
-
 
 class Dashboard extends Component {
   constructor(props) {
@@ -93,19 +89,19 @@ class Sidebar extends React.Component {
           item1={"Add Client"}
           item2={"Add Employee"}
           item3={"Update Profile"}
+          item4={"Add Admin"}
           setView={this.props.setView}
         />
         <div>
-          <a href="/">
-            <MDBBtn
-              color="warning"
-              onClick={() => {
-                window.location.reload();
-              }}
-            >
-              LOGOUT
-            </MDBBtn>
-          </a>
+          <MDBBtn
+            color="warning"
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+          >
+            LOGOUT
+          </MDBBtn>
         </div>
       </div>
     );
@@ -120,8 +116,6 @@ class UserProfileView extends React.Component {
   render() {
     return (
       <div className="user-profile">
-
- 
         <h3 id="display-name">{this.props.username}</h3>
         <p className="subtitle">{this.props.usertitle}</p>
       </div>
@@ -178,26 +172,32 @@ class SidebarMenu extends React.Component {
     return (
       <div className="menu-items">
         <a
+          style={{ color: "white" }}
           className={this.state.overview}
-
-          href=""
-          onClick={() => this.setBtnAndView("overview")}>
-
+          onClick={() => this.setBtnAndView("overview")}
+        >
           {this.props.item1}
         </a>
         <a
+          style={{ color: "white" }}
           className={this.state.schedule}
-          href="#"
           onClick={() => this.setBtnAndView("schedule")}
         >
           {this.props.item2}
         </a>
         <a
+          style={{ color: "white" }}
           className={this.state.performance}
-          href="#"
           onClick={() => this.setBtnAndView("performance")}
         >
           {this.props.item3}
+        </a>
+        <a
+          style={{ color: "white" }}
+          className={this.state.administrator}
+          onClick={() => this.setBtnAndView("administrator")}
+        >
+          {this.props.item4}
         </a>
       </div>
     );
@@ -207,40 +207,106 @@ class SidebarMenu extends React.Component {
 class Overview extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { name: "", email: "", password: "", phoneNumber: "" };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(e) {
+    if (this.state.name === "") {
+      return;
+    }
+    axios
+      .post("http://localhost:5500/Client/register", this.state)
+      .then((res) => {
+        if (res.data === "") {
+          Swal.fire({
+            title: "a user with the same email already exists",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 2500);
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "user was successfully registered",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1600);
+        }
+      });
+    e.preventDefault();
+  }
+
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
   render() {
     return (
       <div className="dash-view">
         <center>
-
-          
-          <div  style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
-            <>
-             
+          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+            <Card.ImgOverlay>
+              <Card.Title>
+                <h2 className="view-heading" style={{ color: "gold" }}>
+                  Add Client
+                </h2>
+              </Card.Title>
               <form>
-            <br></br>
-            <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h4>
-            <br></br>
-            <input type="text" placeholder="FirstName" required />
-            <br></br>
-            <br></br>
-            <input type="text" placeholder="LastName" required />
-            <br></br>
-            <br></br>
-            <input type="text" placeholder="email" required />
-            <br></br>
-            <br></br>
-            <input type="password" placeholder="Password" required />
-            <br></br>
-            <br></br>
-            <input type="text" placeholder="PhoneNumber" required />
-            <br></br>
-            <br></br>
-            <MDBBtn rounded color="warning">Add</MDBBtn>
-
-          </form>
-            </>
-          </div>
+                <br></br>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  name="name"
+                  onChange={this.onChange}
+                  required
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="email"
+                  placeholder="email"
+                  required
+                  name="email"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  name="password"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  onChange={this.onChange}
+                  type="number"
+                  placeholder="PhoneNumber"
+                  required
+                  name="phoneNumber"
+                />{" "}
+                <br></br>
+                <br></br>
+                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
+                  Add
+                </MDBBtn>
+              </form>
+            </Card.ImgOverlay>
+          </Card>
         </center>
         <DashboardCard />
       </div>
@@ -251,51 +317,109 @@ class Overview extends React.Component {
 class ScheduleView extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      phoneNumber: "",
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(e) {
+    axios
+      .post("http://localhost:5500/employee/register", this.state)
+      .then((res) => {
+        if (res.data === "") {
+          Swal.fire({
+            title: "a user with the same email already exists",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 2500);
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "user was successfully registered",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        setTimeout(() => {
+          window.location.reload();
+        }, 2500);
+      });
+  }
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
   render() {
     return (
       <div className="dash-view">
         <center>
-
-        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px'}}>
+          <Card className="bg-dark text-white" style={{ height: "600px" }}>
             <Card.ImgOverlay>
-              
+              <Card.Title>
+                <h2 className="view-heading" style={{ color: "gold" }}>
+                  Add Employee
+                </h2>
+              </Card.Title>
               <form>
-          <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Employee</h4>
-          <br></br>
-          <input type="text" placeholder="FirstName" required />
-          <br></br>
-          <br></br>
-          <input type="text" placeholder="LastName" required />
-          <br></br>
-          <br></br>
-          <input type="text" placeholder="email" required />
-          <br></br>
-          <br></br>
-          <input type="password" placeholder="Password" required />
-          <br></br>
-          <br></br>
-          <input type="text" placeholder="PhoneNumber" required />
-          <br></br>
-          <br></br>
-
-          <MDBBtn color="warning">Add</MDBBtn>
- 
-            <br></br>
-            <br></br>
-            <br></br>
-
-           
-           
-          </form>
-          </Card.ImgOverlay>
+                <br></br>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  name="name"
+                  onChange={this.onChange}
+                  required
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="text"
+                  placeholder="email"
+                  required
+                  name="email"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  name="password"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  onChange={this.onChange}
+                  type="text"
+                  placeholder="PhoneNumber"
+                  required
+                  name="phoneNumber"
+                />{" "}
+                <br></br>
+                <br></br>
+                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
+                  Add
+                </MDBBtn>
+                <br></br>
+                <br></br>
+                <br></br>
+              </form>
+            </Card.ImgOverlay>
           </Card>
-       
- 
-
-          
-                 </center>
-
+        </center>
         <DashboardCard />
       </div>
     );
@@ -305,72 +429,175 @@ class ScheduleView extends React.Component {
 class PerformanceView extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      password: "",
+      newPassword: "",
+      newPassword1: "",
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(e) {
+    let email = localStorage.getItem("email");
+    this.state.email = email;
+    if (this.state.newPassword !== this.state.newPassword1) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: " Passwords must be equal!",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2500);
+    }
+    axios
+      .put(`http://localhost:5500/admin/${email}`, this.state)
+      .then((res) => {
+        if (res.data === "") {
+          Swal.fire({
+            icon: "error",
+            text: "can't update wrong!",
+            footer: "<a href>Why do I have this issue?</a>",
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 2500);
+        } else {
+          let timerInterval;
+          Swal.fire({
+            title: "updated!",
+            html: "I will close in <b></b> milliseconds.",
+            timer: 2000,
+            timerProgressBar: true,
+            willOpen: () => {
+              Swal.showLoading();
+              timerInterval = setInterval(() => {
+                const content = Swal.getContent();
+                if (content) {
+                  const b = content.querySelector("b");
+                  if (b) {
+                    b.textContent = Swal.getTimerLeft();
+                  }
+                }
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              setTimeout(() => {
+                window.location.reload();
+              }, 2500);
+            }
+          });
+        }
+        console.log(res);
+      });
+  }
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
   render() {
     return (
       <div className="dash-view">
-
-           <center>
-        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
+        <center>
+          <Card className="bg-dark text-white" style={{ height: "600px" }}>
             <Card.ImgOverlay>
-             
+              <Card.Title>
+                <h2 className="view-heading" style={{ color: "gold" }}>
+                  Edit Profile
+                </h2>
+              </Card.Title>
               <form>
-        <h4 className="view-heading" style = {{color :'#20B2AA'}}>Edit Profile</h4>
-        
-          <br></br>
-          <input type="text" placeholder="email" required />
-        <br></br>
-        <br></br>
-        <input type="password" placeholder="Password" required />
-        <br></br>
-        <br></br>
-        <input type="password" placeholder="NewPassword" required />
-        <br></br>
-        <br></br>
-        <input type="password" placeholder="NewPassword" required />
-        <br></br>
-        <br></br>
-       
-       <br></br>
-          <br></br>
-
-          <MDBBtn color="warning">Edit</MDBBtn>
- 
-            <br></br>
-            <br></br>
-            <br></br>
-
-           
-           
-          </form>
-
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  name="password"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="password"
+                  placeholder="NewPassword"
+                  required
+                  name="newPassword"
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <input
+                  type="password"
+                  placeholder="NewPassword"
+                  name="newPassword1"
+                  required
+                  onChange={this.onChange}
+                />{" "}
+                <br></br>
+                <br></br>
+                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
+                  Add
+                </MDBBtn>
+                <br></br>
+              </form>
             </Card.ImgOverlay>
           </Card>
         </center>
-
         <DashboardCard />
       </div>
     );
   }
 }
-
-        class AdministratorView extends React.Component {
-            constructor(props) {
-                super(props);
-            }
-            render() {
-                return (
-                    <div className="dash-view">
-                       <h2 className="view-heading">Add Admin</h2>
-                        <input type="text" placeholder="email" required/><br></br><br></br>
-                        <input type="password" placeholder="Password" required/><br></br><br></br>
-                        <DashboardCard />
-                    </div>
-                );
-            }
-        }
-        var currentView = "overview";
-
+class AdministratorView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onSubmit(e) {
+    axios.post("http://localhost:5500/test/t", this.state).then((res) => {
+      console.log(res.data);
+    });
+  }
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+  render() {
+    return (
+      <div className="dash-view">
+        <center>
+          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+            <Card.ImgOverlay>
+              <h2 className="view-heading" style={{ color: "gold" }}>
+                Add Admin
+              </h2>
+              <input
+                type="text"
+                placeholder="email"
+                required
+                name="email"
+                onChange={this.onChange}
+              />{" "}
+              <br></br>
+              <br></br>
+              <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
+                Add
+              </MDBBtn>
+              <DashboardCard />
+            </Card.ImgOverlay>
+          </Card>
+        </center>
+      </div>
+    );
+  }
+}
+var currentView = "overview";
 
 class DashboardCard extends React.Component {
   constructor(props) {
