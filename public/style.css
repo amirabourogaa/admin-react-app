@@ -58,16 +58,7 @@ th {
   margin-top: 10px;
 }
 
-#form {
-  width: 400px;
-  height: 350px;
-  background-color: rgb(112, 141, 112);
-  top: 100%;
-  left: 100%;
 
-  border-radius: 5px;
-  padding: 5px;
-}
 .input {
   border: 2px solid #eee;
   border-radius: 5px;
