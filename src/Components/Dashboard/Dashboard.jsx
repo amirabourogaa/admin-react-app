@@ -381,7 +381,6 @@ class PerformanceView extends React.Component {
         var currentView = "overview";
 
 
-
 class DashboardCard extends React.Component {
   constructor(props) {
     super(props);
