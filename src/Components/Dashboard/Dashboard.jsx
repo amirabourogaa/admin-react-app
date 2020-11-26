@@ -218,8 +218,8 @@ class Overview extends React.Component {
             <>
              
               <form>
-                <br></br>
-              <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h4>
+            <br></br>
+            <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h4>
             <br></br>
             <input type="text" placeholder="FirstName" required />
             <br></br>
@@ -238,14 +238,9 @@ class Overview extends React.Component {
             <br></br>
             <MDBBtn rounded color="warning">Add</MDBBtn>
 
-           
-           
           </form>
             </>
           </div>
-
-          
-
         </center>
         <DashboardCard />
       </div>
