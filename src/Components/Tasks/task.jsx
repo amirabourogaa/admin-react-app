@@ -4,6 +4,7 @@ import AddTask from "./AddTask";
 import TaskM from "./Tasks";
 
 class Task extends Component {
+ 
   constructor(props) {
     super(props);
     this.state = {
@@ -31,14 +32,46 @@ class Task extends Component {
     return (
       <div className="container">
         <AddTask></AddTask>
-        <table border="1">
+        <table class="table table-hover">
+  <thead>
+    
+  </thead>
+  <tbody>
+   
+   
+   
+    
+    <tr class="table-success">
+      <th scope="row">Success</th>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">Danger</th>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+    </tr>
+    <tr class="table-warning">
+      <th scope="row">Warning</th>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+    </tr>
+  
+     
+  </tbody>
+</table>
+        {/* <table border="1">
           <tr>
             <th>In progress</th>
             <th>In Hold</th>
             <th>In Progress</th>
             <th>Done</th>
           </tr>
-        </table>
+        </table> */}
+        
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">

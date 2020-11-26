@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
-          import Wrapper from "./Wrapper/index.jsx";
+      import Wrapper from "./Wrapper/index.jsx";
       import Table from "./Table/index.jsx";
       import TableHead from "./TableHead//index.jsx";
       import TableBody from "./TableBody/index.jsx";
       import TableRow from "./TableRow/index.jsx";
       import TableRowHeader from "./TableRowHeader/index.jsx";
       import Row from "./Row/index.jsx";
-      import Dropdown from "./Dropdown/index.jsx";
-      import DropdownItemButton from "./DropdownItemButton/index.jsx";
       import ResetButton from "./ResetButton/index.jsx";
       import SearchForm from "./SearchForm/index.jsx";
       import employees from "./employees.json";
@@ -128,9 +126,11 @@ import React, { Component } from 'react';
           if (defaultState.employees.map(employee => employee.last_name).includes(this.state.lastName)) {
             foundEmployees = defaultState.employees.filter(employee => employee.last_name === this.state.lastName);
             this.setState({ employees: foundEmployees })
+
           } else {
             alert(`"${this.state.lastName}" is not in this database.`)
           }
+          
           this.setState({ lastName: "" });
         }
       
