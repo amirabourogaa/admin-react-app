@@ -36,7 +36,7 @@ class Task extends Component {
         <table class="table table-sm table-dark">
   <thead>
     <tr>
-      <th  scope="col">Tasks</th>
+      
       <th  class="bg-info" scope="col">In progress</th>
       <th  class="bg-danger" scope="col">On hold</th>
       <th  class="bg-warning" scope="col">In progress</th>
@@ -45,7 +45,7 @@ class Task extends Component {
   </thead>
   <tbody>
     <tr>
-      <th   scope="col">Name of the task</th>
+     
       <td  class="bg-info" >IP</td>
       <td class="bg-danger">OH</td>
       <td class="bg-warning">IP</td>
@@ -55,14 +55,7 @@ class Task extends Component {
    
   </tbody>
 </table>
-        {/* <table border="1">
-          <tr>
-            <th>In progress</th>
-            <th>In Hold</th>
-            <th>In Progress</th>
-            <th>Done</th>
-          </tr>
-        </table> */}
+      
         
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
