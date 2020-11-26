@@ -32,45 +32,30 @@ class Task extends Component {
     return (
       <div className="container">
         <AddTask></AddTask>
-        <table class="table table-hover">
+        <br></br><br></br><br></br><br></br><br></br>
+        <table class="table table-sm table-dark">
   <thead>
-    
+    <tr>
+      
+      <th  class="bg-info" scope="col">In progress</th>
+      <th  class="bg-danger" scope="col">On hold</th>
+      <th  class="bg-warning" scope="col">In progress</th>
+      <th class="bg-success" scope="col">Done</th>
+    </tr>
   </thead>
   <tbody>
-   
-   
-   
-    
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-  
+    <tr>
      
+      <td  class="bg-info" >IP</td>
+      <td class="bg-danger">OH</td>
+      <td class="bg-warning">IP</td>
+      <td class="bg-success" >done</td>
+    </tr>
+    
+   
   </tbody>
 </table>
-        {/* <table border="1">
-          <tr>
-            <th>In progress</th>
-            <th>In Hold</th>
-            <th>In Progress</th>
-            <th>Done</th>
-          </tr>
-        </table> */}
+      
         
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
