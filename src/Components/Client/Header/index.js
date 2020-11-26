@@ -8,7 +8,7 @@ function Header() {
     <div className="header container text-center">
       <center>
       <MDBCol col='4'>
-        <MDBCard style = {{height : '100px'}} >
+        <MDBCard style = {{height : '50px'}} >
           <MDBCardImage
             className='view view-cascade gradient-card-header peach-gradient'
             cascade
