@@ -216,11 +216,10 @@ class Overview extends React.Component {
           
           <div  style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <>
-              <Card.Title>
-              <h3 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h3>
-              </Card.Title>
+             
               <form>
-            
+                <br></br>
+              <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h4>
             <br></br>
             <input type="text" placeholder="FirstName" required />
             <br></br>
@@ -263,13 +262,11 @@ class ScheduleView extends React.Component {
       <div className="dash-view">
         <center>
 
-        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
+        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px'}}>
             <Card.ImgOverlay>
-              <Card.Title>
-              <h2 className="view-heading" style = {{color :'#20B2AA'}}>Add Employee</h2>
-              </Card.Title>
-              <form>
               
+              <form>
+          <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Employee</h4>
           <br></br>
           <input type="text" placeholder="FirstName" required />
           <br></br>
@@ -321,11 +318,10 @@ class PerformanceView extends React.Component {
            <center>
         <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
             <Card.ImgOverlay>
-              <Card.Title>
-              <h2 className="view-heading" style = {{color :'#20B2AA'}}>Edit Profile</h2>
-              </Card.Title>
+             
               <form>
-              
+        <h4 className="view-heading" style = {{color :'#20B2AA'}}>Edit Profile</h4>
+        
           <br></br>
           <input type="text" placeholder="email" required />
         <br></br>
