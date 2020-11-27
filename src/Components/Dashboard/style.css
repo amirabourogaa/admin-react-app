@@ -1,8 +1,12 @@
-.sidebar-menu{
-    background-color: rgba(0, 0, 0, 0.85);
+.sidebar-menu {
+  background-color: rgba(0, 0, 0, 0.85);
 }
-.active-item , .inactive-item {
-    color : white ;
-    font-size: 16px;
+.active-item,
+.inactive-item {
+  color: white;
+  font-size: 16px;
 }
 
+input {
+  color: black !important;
+}
