@@ -1,39 +1,65 @@
-import React, { Component } from 'react';
+import React from "react";
+import Talk from "talkjs";
 
-class MessageForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          username: '',
-        };
-      }
-      myChangeHandler = (event) => {
-        let nam = event.target.name;
-        let val = event.target.value;
-        this.setState({[nam]: val});
-      }
-      render() {
-        return (
-          <form>
-         <div className="chat">
-  <div className="chat-title">
-    <h1>Test</h1>
-    <figure className="avatar">
-      <img src="https://img.bfmtv.com/i/0/0/37b/e4bef2fbdad29c17c26214e98e36c.jpg" /></figure>
-  </div>
-  <div className="messages">
-    <div className="messages-content"></div>
-  </div>
-  <div className="message-box">
-    <textarea type="text" className="message-input" placeholder="Type message..."></textarea>
-    <button type="submit" className="message-submit">Send</button>
-  </div>
+class MessageForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.inbox = undefined;
+  }
+  componentDidMount() {
+    // Promise can be `then`ed multiple times
+    Talk.ready
+      .then(() => {
+        const me = new Talk.User({
+          id: "12345231",
+          name: "George Looney",
+        });
 
-</div>
-          </form>
-         
+        if (!window.talkSession) {
+          window.talkSession = new Talk.Session({
+            appId: "t0GxFCPJ",
+            me: me,
+          });
+        }
+
+        const other = new Talk.User({
+          id: "54321",
+          name: "Ronald Raygun",
+        });
+
+        // You control the ID of a conversation. oneOnOneId is a helper method that generates
+        // a unique conversation ID for a given pair of users.
+        const conversationId = Talk.oneOnOneId(me, other);
+
+        const conversation = window.talkSession.getOrCreateConversation(
+          conversationId
         );
-      }
+        conversation.setParticipant(me);
+        conversation.setParticipant(other);
+
+        this.inbox = window.talkSession.createInbox({
+          selected: conversation,
+        });
+        this.inbox.mount(this.container);
+      })
+      .catch((e) => console.error(e));
+  }
+
+  componentWillUnmount() {
+    if (this.inbox) {
+      this.inbox.destroy();
     }
-    
-  export default MessageForm;
+  }
+
+  render() {
+    return (
+      <span>
+        <div style={{ height: "500px" }} ref={(c) => (this.container = c)}>
+          Loading...
+        </div>
+      </span>
+    );
+  }
+}
+
+export default MessageForm;
