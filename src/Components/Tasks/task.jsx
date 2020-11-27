@@ -4,7 +4,6 @@ import AddTask from "./AddTask";
 import TaskM from "./Tasks";
 
 class Task extends Component {
- 
   constructor(props) {
     super(props);
     this.state = {
@@ -32,62 +31,54 @@ class Task extends Component {
     return (
       <div className="container">
         <AddTask></AddTask>
-        <table class="table table-hover">
-  <thead>
-    
-  </thead>
-  <tbody>
-   
-   
-   
-    
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-  
-     
-  </tbody>
-</table>
-        {/* <table border="1">
-          <tr>
-            <th>In progress</th>
-            <th>In Hold</th>
-            <th>In Progress</th>
-            <th>Done</th>
-          </tr>
-        </table> */}
-        
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <table class="table table-sm table-dark">
+          <thead>
+            <tr>
+              <th className="bg-info" scope="col">
+                In progress
+              </th>
+              <th className="bg-danger" scope="col">
+                On hold
+              </th>
+              <th className="bg-warning" scope="col">
+                In progress
+              </th>
+              <th className="bg-success" scope="col">
+                Done
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="bg-info">IP</td>
+              <td className="bg-danger">OH</td>
+              <td className="bg-warning">IP</td>
+              <td className="bg-success">done</td>
+            </tr>
+          </tbody>
+        </table>
+
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">
-              <TaskM task={element} />
+              <TaskM task={element} key={index} />
             </div>
           ) : element.status === "fase 2" ? (
             <div className="phase2">
-              <TaskM task={element} />
+              <TaskM task={element} key={index} />
             </div>
           ) : element.status === "fase 3" ? (
             <div className="phase3">
-              <TaskM task={element} />{" "}
+              <TaskM task={element} key={index} />{" "}
             </div>
           ) : (
             <div className="phase4">
-              <TaskM task={element} />{" "}
+              <TaskM task={element} key={index} />{" "}
             </div>
           );
         })}

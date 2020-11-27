@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
 class AddTask extends Component {
   constructor(props) {
     super(props);
@@ -37,42 +37,76 @@ class AddTask extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <label name="Employeename">Employee name</label>
-        <input
-          required
-          name="EmployeeName"
-          type="text"
-          placeholder="Employee Name"
-          onChange={this.onChange}
-          className="input"
-        ></input>
-        <br></br>
-        <label name="Clientname">Client name</label>
-        <input
-          required
-          name="ClientName"
-          type="text"
-          placeholder="Client Name"
-          onChange={this.onChange}
-          className="input"
-        ></input>
-        <br></br>
-        <label name="DueDate">
-          <strong>Due date</strong>
-        </label>
-        <input
-          required
-          name="DueDate"
-          type="date"
-          onChange={this.onChange}
-          className="input"
-        ></input>
-        <br></br>
-        <button type="submit" className="">
-          Submit
-        </button>
-      </form>
+      <div>
+        <MDBContainer>
+          <div className="d-flex justify-content-center">
+            <MDBPopover placement="top" popover clickable>
+              <MDBBtn color="red">Give Tasks </MDBBtn>
+              <div>
+                <div>
+                  <center
+                    style={{
+                      width: "270px",
+                      backgroundColor: "rgba(0, 0, 0, 0.85)",
+                      color: "white",
+                    }}
+                    class="jumbotron jumbotron-fluid"
+                  >
+                    <h1 style={{ color: "white" }}>Give tasks</h1>
+                    <form style={{ fontSize: "18px" }} onSubmit={this.onSubmit}>
+                      <label name="Employeename">Employee name</label>
+                      <input
+                        required
+                        name="EmployeeName"
+                        type="text"
+                        placeholder="Employee Name"
+                        onChange={this.onChange}
+                        className="input"
+                      ></input>
+                      <br></br>
+                      <label name="Clientname">Client name</label>
+                      <br></br>
+                      <input
+                        required
+                        name="ClientName"
+                        type="text"
+                        placeholder="Client Name"
+                        onChange={this.onChange}
+                        className="input"
+                      ></input>
+                      <br></br>
+                      <label name="DueDate">
+                        <strong>Due date</strong>
+                      </label>
+                      <br></br>
+                      <input
+                        style={{ color: "grey" }}
+                        required
+                        name="DueDate"
+                        type="date"
+                        onChange={this.onChange}
+                        className="input"
+                      ></input>
+                      <br></br>
+                      <br></br>
+                      <MDBBtn
+                        size="lg"
+                        tag="a"
+                        type="submit"
+                        floating
+                        social="pin"
+                      >
+                        ADD
+                      </MDBBtn>
+                    </form>
+                  </center>
+                </div>
+              </div>
+            </MDBPopover>
+          </div>
+        </MDBContainer>
+        <div></div>
+      </div>
     );
   }
 }
