@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {localStorage.getItem("token") !== null ? (
+        {localStorage.getItem("bangigkeitansscherzwort") !== null ? (
           <Router>
             <div>
               <Navbar />
@@ -62,7 +62,6 @@ class App extends React.Component {
           <Router>
             <Switch>
               <Route path="/" exact exact component={Land} />
-
               <Route path="/invitation/admin/*" component={Invitation}></Route>
             </Switch>
           </Router>
