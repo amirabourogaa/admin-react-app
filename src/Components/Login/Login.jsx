@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar.jsx";
 import axios from "axios";
 import Swal from "sweetalert2";
-import '../Login/style.css'
+import "../Login/style.css";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ class Login extends Component {
     axios.post("http://localhost:5500/admin/login", obj).then((res) => {
       if (res.data !== false) {
         localStorage.setItem("email", obj.email);
-        localStorage.setItem("token", res.data);
+        localStorage.setItem("bangigkeitansscherzwort", res.data);
         window.location.reload();
       } else {
         return Swal.fire({
@@ -57,7 +57,6 @@ class Login extends Component {
         <div>
           <center>
             <br></br> <br></br>
-            
             <form id="form">
               <h1>Hello Boss </h1>
               <input

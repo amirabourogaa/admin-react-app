@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -12,4 +13,8 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-  
+
+.chatbox-container {
+  height: 440px;
+}
+

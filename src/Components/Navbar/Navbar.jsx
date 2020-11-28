@@ -69,51 +69,42 @@ class Navbar extends Component {
     });
   }
 
-
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand"></a>
-
-
-              
-          
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarColor02"
-            aria-controls="navbarColor02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <Link to="/dashboard">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <Link to="/">
                   My Dashboard
-                  <span class="sr-only">(current)</span>
+                  <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/messages">My messages</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/employees">My Employee</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/clients">My Clients</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/chat">My Calendar</Link>
               </li>
 
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/tasks">Give Tasks</Link>
+              </li>
+              <li
+                id="logout"
+                onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+              >
+                Logout
               </li>
             </ul>
           </div>
@@ -122,6 +113,5 @@ class Navbar extends Component {
     );
   }
 }
-
 
 export default Navbar;
