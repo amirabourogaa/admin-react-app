@@ -19,6 +19,7 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "antd/dist/antd.css";
+import { isEqualWith } from "lodash";
 
 
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
 
         <Router>
           <div>
+            
             <Navbar />
             <Switch>
               <Route path="/Login" exact component={Login} />

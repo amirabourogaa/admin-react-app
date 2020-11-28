@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody } from 'mdbreact';
-
+import '../Landing/style.css'
 
 
 
@@ -68,7 +68,7 @@ class Land extends React.Component {
           <MDBContainer >
           <MDBBtn color="warning" onClick={this.toggle(10)}>Click to login </MDBBtn>
           <MDBModal isOpen={this.state.modal10} toggle={this.toggle(10)} frame position="bottom">
-            <MDBModalBody style={{backgroundColor :'rgba(0, 0, 0, 0.85)'}} className="text-center">
+            <MDBModalBody style={{backgroundColor :'rgba(0, 0, 0, 0.85)',width:'300px'}} className="text-center">
             <Login/>
             
               
