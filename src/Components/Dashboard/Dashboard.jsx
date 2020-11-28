@@ -214,12 +214,12 @@ class Overview extends React.Component {
         <center>
 
           
-          <div  style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
+          <div  style = {{height : '600px' ,fontFamily:'cursive', opacity:'0.4px' , width : '400px' }}>
             <>
              
               <form>
             <br></br>
-            <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Client</h4>
+            <h4 className="view-heading" style = {{color :'black'}}>Add Client</h4>
             <br></br>
             <input type="text" placeholder="FirstName" required />
             <br></br>
@@ -257,11 +257,11 @@ class ScheduleView extends React.Component {
       <div className="dash-view">
         <center>
 
-        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px'}}>
-            <Card.ImgOverlay>
+        <div style = {{height : '600px'  , fontFamily:'cursive', width : '400px'}}>
+            <div>
               
               <form>
-          <h4 className="view-heading" style = {{color :'#20B2AA'}}>Add Employee</h4>
+          <h4 className="view-heading" style = {{color :'black'}}>Add Employee</h4>
           <br></br>
           <input type="text" placeholder="FirstName" required />
           <br></br>
@@ -288,8 +288,8 @@ class ScheduleView extends React.Component {
            
            
           </form>
-          </Card.ImgOverlay>
-          </Card>
+          </div>
+          </div>
        
  
 
@@ -311,11 +311,11 @@ class PerformanceView extends React.Component {
       <div className="dash-view">
 
            <center>
-        <Card style = {{height : '600px' , backgroundColor :'rgba(0, 0, 0, 0.85)' , opacity:'0.4px' , width : '400px' }}>
-            <Card.ImgOverlay>
+        <div style = {{height : '600px' , opacity:'0.4px',fontFamily:'cursive' , width : '400px' }}>
+            <div>
              
               <form>
-        <h4 className="view-heading" style = {{color :'#20B2AA'}}>Edit Profile</h4>
+        <h4 className="view-heading" style = {{color :'black'}}>Edit Profile</h4>
         
           <br></br>
           <input type="text" placeholder="email" required />
@@ -344,8 +344,8 @@ class PerformanceView extends React.Component {
            
           </form>
 
-            </Card.ImgOverlay>
-          </Card>
+            </div>
+          </div>
         </center>
 
         <DashboardCard />
