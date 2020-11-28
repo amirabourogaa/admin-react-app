@@ -1,4 +1,13 @@
 .nav-item {
-    font-size: 16px;
-   
+  font-size: 16px;
+}
+
+#logout {
+  font-size: 16px;
+  color: #cfb53b;
+  float: right;
+}
+
+input {
+  color: black;
 }
