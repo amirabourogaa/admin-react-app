@@ -2,7 +2,7 @@
 import { Button, Card } from 'react-bootstrap';
 import React from "react";
 import Login from "../Login/Login.jsx";
-
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody } from 'mdbreact';
 
 
 
@@ -23,6 +23,17 @@ class Land extends React.Component {
   toUserLogin() {
     var logUser = !this.state.goToUserLogin;
     this.setState({ goToUserLogin: logUser });
+  }
+  state = {
+    modal10: false,
+    modal11: false
+  }
+  
+  toggle = nr => () => {
+    let modalNumber = 'modal' + nr
+    this.setState({
+      [modalNumber]: !this.state[modalNumber]
+    });
   }
  
   
@@ -54,7 +65,18 @@ class Land extends React.Component {
           
           </div>
         ) : this.state.goToUserLogin ? (
-          <Login/>
+          <MDBContainer >
+          <MDBBtn color="warning" onClick={this.toggle(10)}>Click to login </MDBBtn>
+          <MDBModal isOpen={this.state.modal10} toggle={this.toggle(10)} frame position="bottom">
+            <MDBModalBody style={{backgroundColor :'rgba(0, 0, 0, 0.85)'}} className="text-center">
+            <Login/>
+            
+              
+            </MDBModalBody>
+          </MDBModal>
+          
+        </MDBContainer>
+          
           
         ) : null}
         </center>
