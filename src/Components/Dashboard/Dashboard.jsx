@@ -94,7 +94,7 @@ class Sidebar extends React.Component {
         />
         <div>
           <MDBBtn
-            color="warning"
+            color="danger"
             onClick={() => {
               localStorage.clear();
               window.location.reload();
@@ -256,57 +256,44 @@ class Overview extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
-            <Card.ImgOverlay>
-              <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Add Client
-                </h2>
-              </Card.Title>
-              <form>
-                <br></br>
-                <input
-                  type="text"
+        <div class="vid-container">
+  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
+  </video> */}
+  <div class="inner-container">
+    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
+    </video>
+    <div class="box" style={{marginRight:'500px'}}>
+      <h1>Add client</h1>
+      <input type="text"
                   placeholder="Full Name"
                   name="name"
-                  onChange={this.onChange}
-                  required
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="email"
+                  onChange={this.onChange} />
+      <input type="email"
                   placeholder="email"
                   required
                   name="email"
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="password"
+                  onChange={this.onChange}/>
+      <input  type="password"
                   placeholder="Password"
                   required
                   name="password"
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  onChange={this.onChange}
+                  onChange={this.onChange}/>
+      <input  onChange={this.onChange}
                   type="number"
                   placeholder="PhoneNumber"
                   required
-                  name="phoneNumber"
-                />{" "}
-                <br></br>
-                <br></br>
-                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
-                  Add
+                  name="phoneNumber"/>
+      <br/>
+      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      Add
                 </MDBBtn>
-              </form>
-            </Card.ImgOverlay>
-          </Card>
+     
+    </div>
+  </div>
+</div>
+          
         </center>
         <DashboardCard />
       </div>
@@ -365,7 +352,44 @@ class ScheduleView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+        <div class="vid-container">
+  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
+  </video> */}
+  <div class="inner-container">
+    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
+    </video>
+    <div class="box" style={{marginRight:'500px'}}>
+      <h1>Add Employee</h1>
+      <input type="text"
+                  placeholder="Full Name"
+                  name="name"
+                  onChange={this.onChange} />
+      <input type="email"
+                  placeholder="email"
+                  required
+                  name="email"
+                  onChange={this.onChange}/>
+      <input  type="password"
+                  placeholder="Password"
+                  required
+                  name="password"
+                  onChange={this.onChange}/>
+      <input  onChange={this.onChange}
+                  type="number"
+                  placeholder="PhoneNumber"
+                  required
+                  name="phoneNumber"/>
+      <br/>
+      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      Add
+                </MDBBtn>
+     
+    </div>
+  </div>
+</div>
+          {/* <Card className="bg-dark text-white" style={{ height: "600px" }}>
             <Card.ImgOverlay>
               <Card.Title>
                 <h2 className="view-heading" style={{ color: "gold" }}>
@@ -418,7 +442,7 @@ class ScheduleView extends React.Component {
                 <br></br>
               </form>
             </Card.ImgOverlay>
-          </Card>
+          </Card> */}
         </center>
         <DashboardCard />
       </div>
@@ -503,48 +527,43 @@ class PerformanceView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
-            <Card.ImgOverlay>
-              <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Edit Profile
-                </h2>
-              </Card.Title>
-              <form>
-                <input
-                  type="password"
+        <div class="vid-container">
+  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
+  </video> */}
+  <div class="inner-container">
+    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
+    </video>
+    <div class="box" style={{marginRight:'500px'}}>
+      <h1>Edit Profile</h1>
+     
+      <input type="password"
                   placeholder="Password"
                   required
                   name="password"
                   onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="password"
+                  />
+    <input type="password"
                   placeholder="NewPassword"
                   required
                   name="newPassword"
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="password"
+                  onChange={this.onChange}/>
+    <input  type="password"
                   placeholder="NewPassword"
                   name="newPassword1"
                   required
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
-                  Add
+                  onChange={this.onChange}/>
+   
+      <br/>
+      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      Add
                 </MDBBtn>
-                <br></br>
-              </form>
-            </Card.ImgOverlay>
-          </Card>
+     
+    </div>
+  </div>
+</div>
+         
         </center>
         <DashboardCard />
       </div>
