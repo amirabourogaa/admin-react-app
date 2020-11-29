@@ -140,6 +140,12 @@ import React, { Component } from 'react';
              <br></br><br></br><br></br><br></br>
               <Wrapper>
                 <Row>
+                <div class="bg_move">
+                <i class="fas fa-briefcase"></i>
+        <h1>My employees</h1>
+    </div>
+                </Row>
+                <Row>
                   
                  <br></br> <br></br><br></br><br></br>
                   <ResetButton style={{backgroundColor:'blue'}} resetTable={this.resetTable}>

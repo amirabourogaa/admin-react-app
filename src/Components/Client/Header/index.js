@@ -27,7 +27,11 @@ function Header() {
   return (
     <div className="header container text-center">
       <center>
-        <MDBCol col="4">
+      <div class="bg_move">
+      <i class="fas fa-id-card-alt"></i>
+        <h1>My clients</h1>
+    </div>
+        {/* <MDBCol col="4">
           <MDBCard style={{ height: "50px" }}>
             <MDBCardImage
               className="view view-cascade gradient-card-header peach-gradient"
@@ -40,7 +44,7 @@ function Header() {
               </p>
             </MDBCardImage>
           </MDBCard>
-        </MDBCol>
+        </MDBCol> */}
       </center>
     </div>
   );
