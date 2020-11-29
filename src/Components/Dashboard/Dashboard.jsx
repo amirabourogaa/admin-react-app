@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
 import "../Dashboard/style.css";
+import { FaRegAddressBook } from 'react-icons/fa';
+import { AiOutlineEdit } from 'react-icons/ai';
 
-import { Card } from "react-bootstrap";
 import { MDBBtn } from "mdbreact";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -84,8 +85,10 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className="sidebar-menu">
+        
         <UserProfileView />
         <SidebarMenu
+        
           item1={"Add Client"}
           item2={"Add Employee"}
           item3={"Update Profile"}
@@ -176,6 +179,7 @@ class SidebarMenu extends React.Component {
           className={this.state.overview}
           onClick={() => this.setBtnAndView("overview")}
         >
+          <FaRegAddressBook/>
           {this.props.item1}
         </a>
         <a
@@ -183,6 +187,7 @@ class SidebarMenu extends React.Component {
           className={this.state.schedule}
           onClick={() => this.setBtnAndView("schedule")}
         >
+          <FaRegAddressBook/>
           {this.props.item2}
         </a>
         <a
@@ -190,6 +195,7 @@ class SidebarMenu extends React.Component {
           className={this.state.performance}
           onClick={() => this.setBtnAndView("performance")}
         >
+          <AiOutlineEdit/>
           {this.props.item3}
         </a>
         <a
@@ -197,6 +203,7 @@ class SidebarMenu extends React.Component {
           className={this.state.administrator}
           onClick={() => this.setBtnAndView("administrator")}
         >
+          <FaRegAddressBook/>
           {this.props.item4}
         </a>
       </div>
@@ -593,7 +600,7 @@ class AdministratorView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          <Card className="bg-dark text-white" style={{ height: "600px" }}>
+          {/* <Card className="bg-dark text-white" style={{ height: "600px" }}>
             <Card.ImgOverlay>
               <h2 className="view-heading" style={{ color: "gold" }}>
                 Add Admin
@@ -612,7 +619,37 @@ class AdministratorView extends React.Component {
               </MDBBtn>
               <DashboardCard />
             </Card.ImgOverlay>
-          </Card>
+          </Card> */}
+          <div class="vid-container">
+  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
+  </video> */}
+  <div class="inner-container">
+    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
+    </video>
+    <div class="box" style={{marginRight:'500px'}}>
+      <h1>Add admin</h1>
+      <input
+                type="text"
+                placeholder="email"
+                required
+                name="email"
+                onChange={this.onChange}
+              />{" "}
+    
+   
+   
+      <br/>
+      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      Add
+      
+                </MDBBtn>
+     
+    </div>
+  </div>
+</div>
+         
         </center>
       </div>
     );

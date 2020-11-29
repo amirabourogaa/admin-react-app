@@ -128,7 +128,7 @@ button {
 }
 
 .navbar {
-  background-color: #8594c7;
+  background-color: rgba(0, 0, 0, 0.85);
   margin: 0px;
 
   display: flex;
@@ -140,7 +140,7 @@ button {
   padding: 10px;
   margin-right: 5px;
   font-size: 1.1em;
-  color: #ffffff;
+  color: black;
 }
 
 .nav-selected {
