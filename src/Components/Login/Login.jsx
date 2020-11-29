@@ -55,9 +55,33 @@ class Login extends Component {
     if (this.state.view === "main") {
       return (
         <div>
+
           <center>
             <br></br> <br></br>
-            <form id="form">
+            <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="" placeholder="email"  onChange={(e) => this.setState({ email: e.target.value })}
+                value={this.state.email}/>
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
+                value={this.state.password}/>
+      <label>Password</label>
+    </div>
+    <a  type="button" onClick={this.onSubmit}  >
+   
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Login
+    </a>
+  </form>
+</div>
+            {/* <form id="form">
               <h1>Hello Boss </h1>
               <input
                 required
@@ -77,7 +101,7 @@ class Login extends Component {
               <br></br> <br></br>
               <input type="button" value="Login" onClick={this.onSubmit} />
               <br></br> <br></br>
-            </form>
+            </form> */}
           </center>
         </div>
       );
