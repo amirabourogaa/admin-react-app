@@ -142,7 +142,7 @@ import React, { Component } from 'react';
                 <Row>
                   
                  <br></br> <br></br><br></br><br></br>
-                  <ResetButton  resetTable={this.resetTable}>
+                  <ResetButton style={{backgroundColor:'blue'}} resetTable={this.resetTable}>
                   Reset Table
                 </ResetButton>
                 </Row>
@@ -168,6 +168,7 @@ import React, { Component } from 'react';
                   <TableBody>
                     {this.state.employees.map(employee => (
                       <TableRow
+                      style={{width:'100px'}}
                         key={employee.id}
                         id={employee.id}
                         first_name={employee.first_name}
