@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Login from "./Components/Login/Login.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Land from "./Components/Landing/Landingpage.jsx";
 
 import "./Components/My Employee/App.css";
