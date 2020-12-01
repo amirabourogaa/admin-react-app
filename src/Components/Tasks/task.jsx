@@ -12,7 +12,7 @@ class Task extends Component {
   }
 
   check() {
-    axios.get("http://localhost:5500/task").then((response) => {
+    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
