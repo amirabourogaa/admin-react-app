@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Title from "../Title";
-import "./style.css";
+
+import React from 'react';
+import './style.css';
+import {  MDBCard,  MDBCardImage, MDBCol, MDBIcon } from 'mdbreact';
+
+
+
 
 
 function Header() {

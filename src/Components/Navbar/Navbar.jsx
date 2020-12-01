@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FcSmartphoneTablet } from "react-icons/fc";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import { RiLogoutCircleFill } from 'react-icons/ri';
 import { Link } from "react-router-dom";
@@ -81,9 +80,7 @@ class Navbar extends Component {
                   <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link style={{color:'white'}} to="/messages">My messages</Link>
-              </li>
+              
               <li className="nav-item">
                 <Link style={{color:'white'}} to="/employees">My Employee</Link>
               </li>
@@ -95,7 +92,7 @@ class Navbar extends Component {
               </li>
 
               <li className="nav-item">
-                <Link style={{color:'white'}} to="/tasks">Give Tasks</Link>
+                <Link style={{color:'white'}} to="/tasks"> Tasks</Link>
               </li>
               
               <li
