@@ -1,13 +1,16 @@
 body {
-  background-image: url('https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1072&q=80');
- 
+  background-image: url("https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1072&q=80");
+
   background-size: cover;
-  min-width:  100%;
-  min-height:  100%;
- 
+  min-width: 100%;
+  min-height: 100%;
+
   background-repeat: no-repeat;
-  
 }
+.chatbox-container {
+  height: 440px;
+}
+
 .phase1 {
   width: 25%;
   margin-top: 5px;
@@ -57,7 +60,6 @@ th {
   height: 100%;
   margin-top: 10px;
 }
-
 
 .input {
   border: 2px solid #eee;

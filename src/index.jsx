@@ -19,7 +19,7 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "antd/dist/antd.css";
-
+import Invitation from "./Invitation/Invitation.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,32 +34,42 @@ class App extends React.Component {
     });
   };
 
-
   render() {
     return (
       <div>
-
-        <Router>
-          <div>
-            <Navbar />
+        {localStorage.getItem("token") !== null ? (
+          <Router>
+            <div>
+              <Navbar />
+              <Switch>
+                <Route path="/" exact component={Dashboard}></Route>
+                <Route path="/Login" exact exact component={Login} />
+                <Route path="/Land" exact exact component={Land} />
+                <Route path="/messages" exact component={Messageform}></Route>
+                <Route path="/clients" exact component={Client}></Route>
+                <Route path="/employees" exact component={Employee}></Route>
+                <Route path="/profile" exact component={Profile}></Route>
+                <Route path="/chat" exact component={Chat}></Route>
+                <Route path="/tasks" exact component={Task}></Route>
+                <Route
+                  path="/invitation/admin/*"
+                  component={Invitation}
+                ></Route>
+              </Switch>
+            </div>
+          </Router>
+        ) : (
+          <Router>
             <Switch>
-              <Route path="/Login" exact component={Login} />
-              <Route path="/" exact component={Land} />
-              <Route path="/dashboard" component={Dashboard}></Route>
-              <Route path="/messages" component={Messageform}></Route>
-              <Route path="/clients" component={Client}></Route>
-              <Route path="/employees" component={Employee}></Route>
-              <Route path="/profile" component={Profile}></Route>
-              <Route path="/chat" component={Chat}></Route>
-              <Route path="/tasks" component={Task}></Route>
-            </Switch>
+              <Route path="/" exact exact component={Land} />
 
-          </div>
-        </Router>
+              <Route path="/invitation/admin/*" component={Invitation}></Route>
+            </Switch>
+          </Router>
+        )}
       </div>
     );
   }
-
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
