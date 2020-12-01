@@ -4,7 +4,6 @@ import AddTask from "./AddTask";
 import TaskM from "./Tasks";
 
 class Task extends Component {
- 
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +12,7 @@ class Task extends Component {
   }
 
   check() {
-    axios.get("http://localhost:5500/task").then((response) => {
+    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
@@ -33,47 +32,54 @@ class Task extends Component {
     return (
       <div className="container">
         <AddTask></AddTask>
-        <br></br><br></br><br></br><br></br><br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <table class="table table-sm table-dark">
-  <thead>
-    <tr>
-      
-      <th  class="bg-info" scope="col">In progress</th>
-      <th  class="bg-danger" scope="col">On hold</th>
-      <th  class="bg-warning" scope="col">In progress</th>
-      <th class="bg-success" scope="col">Done</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     
-      <td  class="bg-info" >IP</td>
-      <td class="bg-danger">OH</td>
-      <td class="bg-warning">IP</td>
-      <td class="bg-success" >done</td>
-    </tr>
-    
-   
-  </tbody>
-</table>
-      
-        
+          <thead>
+            <tr>
+              <th className="bg-info" scope="col">
+                In progress
+              </th>
+              <th className="bg-danger" scope="col">
+                On hold
+              </th>
+              <th className="bg-warning" scope="col">
+                In progress
+              </th>
+              <th className="bg-success" scope="col">
+                Done
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="bg-info">IP</td>
+              <td className="bg-danger">OH</td>
+              <td className="bg-warning">IP</td>
+              <td className="bg-success">done</td>
+            </tr>
+          </tbody>
+        </table>
+
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">
-              <TaskM task={element} />
+              <TaskM task={element} key={index} />
             </div>
           ) : element.status === "fase 2" ? (
             <div className="phase2">
-              <TaskM task={element} />
+              <TaskM task={element} key={index} />
             </div>
           ) : element.status === "fase 3" ? (
             <div className="phase3">
-              <TaskM task={element} />{" "}
+              <TaskM task={element} key={index} />{" "}
             </div>
           ) : (
             <div className="phase4">
-              <TaskM task={element} />{" "}
+              <TaskM task={element} key={index} />{" "}
             </div>
           );
         })}

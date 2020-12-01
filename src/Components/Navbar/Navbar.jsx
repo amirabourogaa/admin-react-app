@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
-
+import { RiLogoutCircleFill } from 'react-icons/ri';
 import { Link } from "react-router-dom";
 import "../Navbar/style.css";
 class Navbar extends Component {
@@ -68,51 +68,49 @@ class Navbar extends Component {
     });
   }
 
-
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand"></a>
-
-
-              
-          
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarColor02"
-            aria-controls="navbarColor02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <Link to="/dashboard">
+        <nav style={{backgroundColor:'rgba(0, 0, 0, 0.85)'}}className="navbar navbar-expand-lg ">
+          <div className="collapse navbar-collapse" >
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <Link style={{color:'white'}}to="/">
                   My Dashboard
-                  <span class="sr-only">(current)</span>
+                  <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link to="/messages">My messages</Link>
+              <li className="nav-item">
+                <Link style={{color:'white'}} to="/messages">My messages</Link>
               </li>
-              <li class="nav-item">
-                <Link to="/employees">My Employee</Link>
+              <li className="nav-item">
+                <Link style={{color:'white'}} to="/employees">My Employee</Link>
               </li>
-              <li class="nav-item">
-                <Link to="/clients">My Clients</Link>
+              <li className="nav-item">
+                <Link style={{color:'white'}} to="/clients">My Clients</Link>
               </li>
-              <li class="nav-item">
-                <Link to="/chat">My Calendar</Link>
+              <li className="nav-item">
+                <Link style={{color:'white'}} to="/chat">My Calendar</Link>
               </li>
 
-              <li class="nav-item">
-                <Link to="/tasks">Give Tasks</Link>
+              <li className="nav-item">
+                <Link style={{color:'white'}} to="/tasks">Give Tasks</Link>
+              </li>
+              
+              <li
+                
+               
+              >
+                <a  onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+                style={{width:'120px',height:'40px',fontSize:'16px',marginTop:'0px',marginLeft:'350px'}} 
+                class="button b-blue">{" "}
+                  <RiLogoutCircleFill />
+                  Logout
+                </a>
+                
               </li>
             </ul>
           </div>
@@ -121,6 +119,5 @@ class Navbar extends Component {
     );
   }
 }
-
 
 export default Navbar;
