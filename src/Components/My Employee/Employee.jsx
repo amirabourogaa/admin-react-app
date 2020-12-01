@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
       import Wrapper from "./Wrapper/index.jsx";
       import Table from "./Table/index.jsx";
