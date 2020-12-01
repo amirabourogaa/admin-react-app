@@ -4,7 +4,7 @@ import "./style.css";
 function ResetButton(props) {
 
     return (
-        <button className="btn btn-secondary dropdown" type="button" onClick={props.resetTable}>
+        <button className="btn btn-danger dropdown" type="button" onClick={props.resetTable}>
             {props.children}
         </button>
     )

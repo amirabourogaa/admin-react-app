@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 294042a219093a450d1e12facecca7d80c3f04f5
 body {
     margin: 0;
     padding: 0;
@@ -12,4 +16,12 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
+<<<<<<< HEAD
   
+=======
+
+.chatbox-container {
+  height: 440px;
+}
+
+>>>>>>> 294042a219093a450d1e12facecca7d80c3f04f5

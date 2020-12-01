@@ -38,12 +38,9 @@ class Land extends React.Component {
               <br></br>
               <br></br>
               <br></br>
-              <Card className="bg-dark text-white">
+              <Card className=" text-white">
                 <Card.ImgOverlay>
-                  <Card.Title>
-                    Plan and schedule your workflow online. Increase your team
-                    efficiency.
-                  </Card.Title>
+                  
                   <Button
                     variant="danger"
                     className="landB1"
@@ -57,24 +54,9 @@ class Land extends React.Component {
               <br />
             </div>
           ) : this.state.goToUserLogin ? (
-            <MDBContainer>
-              <MDBBtn color="warning" onClick={this.toggle(10)}>
-                Click to login{" "}
-              </MDBBtn>
-              <MDBModal
-                isOpen={this.state.modal10}
-                toggle={this.toggle(10)}
-                frame
-                position="bottom"
-              >
-                <MDBModalBody
-                  style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
-                  className="text-center"
-                >
+           
                   <Login />
-                </MDBModalBody>
-              </MDBModal>
-            </MDBContainer>
+               
           ) : null}
         </center>
       </div>

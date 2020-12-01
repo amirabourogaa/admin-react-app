@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{ useEffect, useState }from 'react';
 import './Navbar.css';
 import {StateDispatchContext} from './stateManager.js';
-
+import {  MDBIcon } from "mdbreact";
+import { FiSettings } from 'react-icons/fi';
 const SettingsMenu = (props) => {
 
   const stateDispatch = React.useContext(StateDispatchContext);
@@ -32,6 +33,7 @@ const SettingsMenu = (props) => {
     >
       
       <li
+      
         className="settings-menu-item"
         onClick={clearAll}
       >Clear All</li>
@@ -110,14 +112,50 @@ const ImportDisplay = (props) => {
 
 const Navbar = (props) => {
   const [settingsMenuProps, setSettingsMenuProps] = React.useState([0,0,false]);
+  const [date, setdate] = useState(new Date());
+
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+      setdate(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+    
+   
+  }, []);
+
+ // const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+  const hour = date.getUTCHours();
+  const minutes = date.getUTCMinutes();
+  const seconds = date.getUTCSeconds();
+
 
   return(
     <div className="navbar">
+       <div class="bg_move">
+      
+              <p>
+                <MDBIcon icon="calendar-alt" /> 
+                <div style={{fontSize:'50px'}}>{day}.{month + 1}.{year} {" "} </div>
+                <MDBIcon icon="clock" /> 
+                <div style={{fontSize:'50px'}}>{hour + 1}:{minutes}:{seconds}</div>
+              </p>
+    </div>
     
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <span
-        className="navbar-settings navbar-item"
+       
         onClick={event => setSettingsMenuProps([event.target.offsetLeft, event.target.offsetTop, !settingsMenuProps[2]])}
-      >Settings</span>
+      >
+       <a  
+                style={{width:'140px',height:'40px',fontSize:'16px',marginTop:'0px',marginLeft:'350px'}} 
+                className="button b-pink">
+                  <FiSettings/>&nbsp;
+                  Settings
+                </a></span>
       {settingsMenuProps[2] &&
         <SettingsMenu
           posX={settingsMenuProps[0]-10}
