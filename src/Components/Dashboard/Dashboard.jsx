@@ -224,7 +224,7 @@ class Overview extends React.Component {
       return;
     }
     axios
-      .post("http://localhost:5500/Client/register", this.state)
+      .post("https://server-cunsulting.herokuapp.com/Client/register", this.state)
       .then((res) => {
         if (res.data === "") {
           Swal.fire({
@@ -323,7 +323,7 @@ class ScheduleView extends React.Component {
 
   onSubmit(e) {
     axios
-      .post("http://localhost:5500/employee/register", this.state)
+      .post("https://server-cunsulting.herokuapp.com/employee/register", this.state)
       .then((res) => {
         if (res.data === "") {
           Swal.fire({
@@ -482,7 +482,7 @@ class PerformanceView extends React.Component {
       }, 2500);
     }
     axios
-      .put(`http://localhost:5500/admin/${email}`, this.state)
+      .put(`https://server-cunsulting.herokuapp.com/admin/${email}`, this.state)
       .then((res) => {
         if (res.data === "") {
           Swal.fire({
@@ -588,7 +588,7 @@ class AdministratorView extends React.Component {
   }
   onSubmit(e) {
     axios
-      .post("http://localhost:5500/admin/register/invitation", this.state)
+      .post("https://server-cunsulting.herokuapp.com/admin/register/invitation", this.state)
       .then((res) => {
         console.log(res.data);
       });
