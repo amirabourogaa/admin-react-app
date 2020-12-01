@@ -3,15 +3,25 @@ import axios from "axios";
 import AddTask from "./AddTask";
 import ModalPage from "./AddRef";
 import TaskM from "./Tasks";
+
+import { storage } from "../../fireBase/firebas";
+import firebase from "firebase/app";
+
+import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+
+
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
+
 class Task extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      downloadURL: "",
+      files: [],
     };
   }
 
@@ -64,18 +74,74 @@ class Task extends Component {
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
-<<<<<<< HEAD
+
     };
+
+
+    const handleFireBaseUpload = (e) => {
+      e.preventDefault(); // prevent page refreshing
+      const promises = [];
+      console.log(Array.isArray(this.state.files));
+      this.state.files.forEach((file) => {
+        const uploadTask = firebase
+          .storage()
+          .ref()
+          .child(`your/file/path/${file.name}`)
+          .put(file);
+        promises.push(uploadTask);
+        uploadTask.on(
+          firebase.storage.TaskEvent.STATE_CHANGED,
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            if (snapshot.state === firebase.storage.TaskState.RUNNING) {
+              console.log(`Progress: ${progress}%`);
+            }
+          },
+          (error) => console.log(error.code),
+          async () => {
+            const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+            // do something with the url
+            console.log(downloadURL);
+            axios.post("http://localhost:5500/References/add", {
+              url: downloadURL,
+            });
+          }
+        );
+      });
+      Promise.all(promises)
+        .then(() => console.log("hey"))
+        .catch((err) => console.log(err.code));
+    };
+
+    const handleImageAsFile = (e) => {
+      const files = e.target.files[0];
+      const array = [];
+      array.push(files);
+      this.setState({ files: array });
+      console.log(this.state.file);
+    };
+
     return !this.state.data? <div>loading</div>: (
       <div>
 
         <MDBContainer>
-=======
-    }; */
+
     return (
       <div className="container">
->>>>>>> c5f1efba2ee5935fe073dc5d4b0efde81503aede
+
         <AddTask></AddTask>
+
+        <input
+          type="file"
+          name="upload"
+          accept="application/pdf,application/vnd.ms-excel"
+          onChange={handleImageAsFile}
+        />
+        <MDBBtn color="red" onClick={handleFireBaseUpload}>
+          add Ref
+        </MDBBtn>
+
         <ModalPage></ModalPage> 
 
         </MDBContainer>
