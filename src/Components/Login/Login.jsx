@@ -35,7 +35,7 @@ class Login extends Component {
         title: "Please enter a password longer than 8 characters...",
       });
     }
-    axios.post("http://localhost:5500/admin/login", obj).then((res) => {
+    axios.post("https://server-cunsulting.herokuapp.com/admin/login", obj).then((res) => {
       if (res.data !== false) {
         localStorage.setItem("email", obj.email);
         localStorage.setItem("bangigkeitansscherzwort", res.data);

@@ -20,7 +20,7 @@ class Task extends Component {
   }
 
   check() {
-    axios.get("http://localhost:5500/task").then((response) => {
+    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
@@ -58,16 +58,23 @@ class Task extends Component {
       
     };
     console.log(this.state.data);
-    const AddTaskStyle = {
+    // use it if there is value in it !
+  /*   const AddTaskStyle = {
       float: "left",
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
+<<<<<<< HEAD
     };
     return !this.state.data? <div>loading</div>: (
       <div>
 
         <MDBContainer>
+=======
+    }; */
+    return (
+      <div className="container">
+>>>>>>> c5f1efba2ee5935fe073dc5d4b0efde81503aede
         <AddTask></AddTask>
         <ModalPage></ModalPage> 
 
