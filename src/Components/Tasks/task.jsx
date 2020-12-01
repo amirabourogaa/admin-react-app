@@ -22,12 +22,13 @@ class Task extends Component {
   render() {
     this.check();
     console.log(this.state.data);
-    const AddTaskStyle = {
+    // use it if there is value in it !
+  /*   const AddTaskStyle = {
       float: "left",
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
-    };
+    }; */
     return (
       <div className="container">
         <AddTask></AddTask>

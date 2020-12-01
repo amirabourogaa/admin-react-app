@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Todoboard from './Todoboard';
 import {initialState, stateReducer, StateDispatchContext} from './stateManager.js';

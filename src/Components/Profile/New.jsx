@@ -14,7 +14,7 @@ const Noticia = (props) => {
 					<p>{ description }</p>
 				</div>
 				<div className="card-action">
-					<a href={url} target="_blank" className="btn waves-effects waves-light">Leer</a>
+					<a href={url}  className="btn waves-effects waves-light">Leer</a>
 				</div>
 			</div>
 		</div>

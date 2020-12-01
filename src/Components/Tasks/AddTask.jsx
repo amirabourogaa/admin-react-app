@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+import { MDBPopover, MDBBtn, MDBContainer } from "mdbreact";
 class AddTask extends Component {
   constructor(props) {
     super(props);
