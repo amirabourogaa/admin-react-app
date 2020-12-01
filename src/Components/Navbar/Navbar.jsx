@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FcSmartphoneTablet } from "react-icons/fc";
 import "bootswatch/dist/lux/bootstrap.min.css";
 
 import { Link } from "react-router-dom";

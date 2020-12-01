@@ -19,7 +19,8 @@ class MessageForm extends Component {
   <div className="chat-title">
     <h1>Test</h1>
     <figure className="avatar">
-      <img src="https://img.bfmtv.com/i/0/0/37b/e4bef2fbdad29c17c26214e98e36c.jpg" /></figure>
+      <img src="https://img.bfmtv.com/i/0/0/37b/e4bef2fbdad29c17c26214e98e36c.jpg" alt="" /></figure>
+      {/* add an alt! */}
   </div>
   <div className="messages">
     <div className="messages-content"></div>
