@@ -535,9 +535,7 @@ class PerformanceView extends React.Component {
       <div className="dash-view">
         <center>
         <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
+  
   <div class="inner-container">
     <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
       <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>

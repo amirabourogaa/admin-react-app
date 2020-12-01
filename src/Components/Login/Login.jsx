@@ -61,15 +61,16 @@ class Login extends Component {
             <div class="login-box">
   <h2>Login</h2>
   <form>
-    <div class="user-box">
-      <input type="text" name="" placeholder="email"  onChange={(e) => this.setState({ email: e.target.value })}
+    <div className="user-box">
+      <input className="loginInput"  type="text" name="" placeholder="email"  onChange={(e) => this.setState({ email: e.target.value })}
                 value={this.state.email}/>
       <label>Username</label>
     </div>
-    <div class="user-box">
-      <input  type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
+    <div className="user-box">
+      <input className="loginInput"  type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
                 value={this.state.password}/>
       <label>Password</label>
+      
     </div>
     <a style={{color:'white',fontStyle:'oblique',fontWeight:'bold'}} type="button" onClick={this.onSubmit}  >
    
@@ -81,27 +82,7 @@ class Login extends Component {
     </a>
   </form>
 </div>
-            {/* <form id="form">
-              <h1>Hello Boss </h1>
-              <input
-                required
-                type="text"
-                placeholder="email"
-                onChange={(e) => this.setState({ email: e.target.value })}
-                value={this.state.email}
-              />
-              <br></br> <br></br>
-              <input
-                required
-                type="password"
-                placeholder="Password"
-                onChange={(e) => this.setState({ password: e.target.value })}
-                value={this.state.password}
-              />
-              <br></br> <br></br>
-              <input type="button" value="Login" onClick={this.onSubmit} />
-              <br></br> <br></br>
-            </form> */}
+
           </center>
         </div>
       );

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddTask from "./AddTask";
+import ModalPage from "./AddRef";
 import TaskM from "./Tasks";
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
-
+import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
 class Task extends Component {
   constructor(props) {
     super(props);
@@ -65,7 +66,14 @@ class Task extends Component {
     };
     return !this.state.data? <div>loading</div>: (
       <div>
+
+        <MDBContainer>
         <AddTask></AddTask>
+        <ModalPage></ModalPage> 
+
+        </MDBContainer>
+
+
         <br></br>
         <br></br>
         <br></br>
@@ -87,6 +95,7 @@ class Task extends Component {
             </tr>
           </thead>
           <tbody>
+
             {this.state.data.map((t, i) => (
               <tr>
                 <td>{i + 1}</td>
@@ -96,78 +105,12 @@ class Task extends Component {
                 <td>{getStatus(t.status)}</td>
               </tr>
             ))}
-            <tr>
-              <td>1</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button
-                  style={{ width: "200px" }}
-                  type="button"
-                  class="btn btn-primary">
-                  In progress
-                </button>
-              </td>
-            </tr>
+           
 
-            <tr>
-              <td>2</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button
-                  type="button"
-                  style={{ width: "200px" }}
-                  class="btn btn-danger">
-                  On hold
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button
-                  style={{ width: "200px" }}
-                  type="button"
-                  class="btn btn-success">
-                  Done
-                </button>
-              </td>
-            </tr>
+           
+           
           </tbody>
         </Table>
-        {/* <table class="table table-sm table-dark">
-          <thead>
-            <tr>
-              <th className="bg-info" scope="col">
-                In progress
-              </th>
-              <th className="bg-danger" scope="col">
-                On hold
-              </th>
-              <th className="bg-warning" scope="col">
-                In progress
-              </th>
-              <th className="bg-success" scope="col">
-                Done
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="bg-info">IP</td>
-              <td className="bg-danger">OH</td>
-              <td className="bg-warning">IP</td>
-              <td className="bg-success">done</td>
-            </tr>
-          </tbody>
-        </table> */}
-
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">
