@@ -1,6 +1,6 @@
 body {
-  background-image: url("https://images.unsplash.com/photo-1548337138-e87d889cc369?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1072&q=80");
-
+  background-image: url('https://i.pinimg.com/originals/f2/05/52/f2055287869555b7efa535223ddc059a.jpg');
+ 
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
@@ -128,7 +128,7 @@ button {
 }
 
 .navbar {
-  background-color: #8594c7;
+  background-color: rgba(0, 0, 0, 0.85);
   margin: 0px;
 
   display: flex;
@@ -140,7 +140,7 @@ button {
   padding: 10px;
   margin-right: 5px;
   font-size: 1.1em;
-  color: #ffffff;
+  color: black;
 }
 
 .nav-selected {
