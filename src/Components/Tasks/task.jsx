@@ -23,6 +23,7 @@ class Task extends Component {
   render() {
     this.check();
     console.log(this.state.data);
+    // use it if there is value in it !
     const AddTaskStyle = {
       float: "left",
       padding: "10px",
