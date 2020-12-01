@@ -67,11 +67,11 @@ class Login extends Component {
       <label>Username</label>
     </div>
     <div class="user-box">
-      <input type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
+      <input  type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
                 value={this.state.password}/>
       <label>Password</label>
     </div>
-    <a  type="button" onClick={this.onSubmit}  >
+    <a style={{color:'white',fontStyle:'oblique',fontWeight:'bold'}} type="button" onClick={this.onSubmit}  >
    
       <span></span>
       <span></span>

@@ -95,7 +95,7 @@ class Navbar extends Component {
               </li>
 
               <li className="nav-item">
-                <Link style={{color:'white'}} to="/tasks">Give Tasks</Link>
+                <Link style={{color:'white'}} to="/tasks"> Tasks</Link>
               </li>
               
               <li
