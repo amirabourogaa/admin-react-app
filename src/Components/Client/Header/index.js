@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './style.css';
 import {  MDBCard,  MDBCardImage, MDBCol, MDBIcon } from 'mdbreact';
 
@@ -32,8 +32,8 @@ function Header() {
     <div className="header container text-center">
       <center>
       <div class="bg_move">
-      <i class="fas fa-id-card-alt"></i>
-        <h1>My clients</h1>
+      
+        <h2>My clients</h2>
     </div>
        
       </center>

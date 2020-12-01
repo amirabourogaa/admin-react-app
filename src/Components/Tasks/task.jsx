@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddTask from "./AddTask";
-import ModalPage from "./AddRef";
+import AddRef from "./AddRef";
 import TaskM from "./Tasks";
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -20,7 +20,7 @@ class Task extends Component {
   }
 
   check() {
-    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
+    axios.get("http://localhost:5500/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
@@ -58,25 +58,18 @@ class Task extends Component {
       
     };
     console.log(this.state.data);
-    // use it if there is value in it !
-  /*   const AddTaskStyle = {
+    const AddTaskStyle = {
       float: "left",
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
-<<<<<<< HEAD
     };
     return !this.state.data? <div>loading</div>: (
       <div>
 
         <MDBContainer>
-=======
-    }; */
-    return (
-      <div className="container">
->>>>>>> c5f1efba2ee5935fe073dc5d4b0efde81503aede
         <AddTask></AddTask>
-        <ModalPage></ModalPage> 
+        <AddRef></AddRef> 
 
         </MDBContainer>
 
