@@ -80,9 +80,7 @@ class Navbar extends Component {
                   <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link style={{color:'white'}} to="/messages">My messages</Link>
-              </li>
+              
               <li className="nav-item">
                 <Link style={{color:'white'}} to="/employees">My Employee</Link>
               </li>
@@ -94,7 +92,7 @@ class Navbar extends Component {
               </li>
 
               <li className="nav-item">
-                <Link style={{color:'white'}} to="/tasks">Give Tasks</Link>
+                <Link style={{color:'white'}} to="/tasks"> Tasks</Link>
               </li>
               
               <li

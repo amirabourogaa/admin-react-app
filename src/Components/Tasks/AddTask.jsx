@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { MDBPopover, MDBBtn, MDBContainer } from "mdbreact";
+import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
 class AddTask extends Component {
   constructor(props) {
     super(props);
@@ -37,11 +37,10 @@ class AddTask extends Component {
 
   render() {
     return (
-      <div>
-        <MDBContainer>
+      <>
           <div className="d-flex justify-content-center">
             <MDBPopover placement="top" popover clickable>
-              <MDBBtn color="red">Give Tasks </MDBBtn>
+              <MDBBtn color="red">Give Tasks</MDBBtn>
               <div>
                 <div>
                   <center
@@ -104,9 +103,9 @@ class AddTask extends Component {
               </div>
             </MDBPopover>
           </div>
-        </MDBContainer>
+
         <div></div>
-      </div>
+      </>
     );
   }
 }

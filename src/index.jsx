@@ -7,7 +7,6 @@ import Land from "./Components/Landing/Landingpage.jsx";
 import "./Components/My Employee/App.css";
 import "./Components/Profile/style.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Messageform from "./Components/Message/Messageform";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Profile from "./Components/Profile/Profile";
 import Employee from "./Components/My Employee/Employee";
@@ -46,7 +45,6 @@ class App extends React.Component {
                 <Route path="/" exact component={Dashboard}></Route>
                 <Route path="/Login" exact exact component={Login} />
                 <Route path="/Land" exact exact component={Land} />
-                <Route path="/messages" exact component={Messageform}></Route>
                 <Route path="/clients" exact component={Client}></Route>
                 <Route path="/employees" exact component={Employee}></Route>
                 <Route path="/profile" exact component={Profile}></Route>

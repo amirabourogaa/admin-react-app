@@ -366,9 +366,9 @@ class ScheduleView extends React.Component {
       <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
   </video> */}
   <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
-    </video>
+    {/* <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+      <source src="https://mazwai.com/videvo_files/video/free/2017-08/small_watermarked/170724_15_Setangibeach_preview.webm" type="video/webm"/>
+    </video> */}
     <div class="box" style={{marginRight:'500px'}}>
       <h1>Add Employee</h1>
       <input type="text"
@@ -391,7 +391,7 @@ class ScheduleView extends React.Component {
                   required
                   name="phoneNumber"/>
       <br/>
-      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      <MDBBtn color="primary" type="submit" onClick={this.onSubmit}>
       Add
                 </MDBBtn>
      
@@ -537,9 +537,7 @@ class PerformanceView extends React.Component {
       <div className="dash-view">
         <center>
         <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
+  
   <div class="inner-container">
     <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
       <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
