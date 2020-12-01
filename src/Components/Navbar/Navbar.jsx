@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { FcSmartphoneTablet } from "react-icons/fc";
 import "bootswatch/dist/lux/bootstrap.min.css";
-
+import { RiLogoutCircleFill } from 'react-icons/ri';
 import { Link } from "react-router-dom";
 import "../Navbar/style.css";
 class Navbar extends Component {
@@ -72,39 +71,44 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="collapse navbar-collapse" id="navbarColor02">
+        <nav style={{backgroundColor:'rgba(0, 0, 0, 0.85)'}}className="navbar navbar-expand-lg ">
+          <div className="collapse navbar-collapse" >
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <Link to="/">
+                <Link style={{color:'white'}}to="/">
                   My Dashboard
                   <span className="sr-only">(current)</span>
                 </Link>
               </li>
+              
               <li className="nav-item">
-                <Link to="/messages">My messages</Link>
+                <Link style={{color:'white'}} to="/employees">My Employee</Link>
               </li>
               <li className="nav-item">
-                <Link to="/employees">My Employee</Link>
+                <Link style={{color:'white'}} to="/clients">My Clients</Link>
               </li>
               <li className="nav-item">
-                <Link to="/clients">My Clients</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/chat">My Calendar</Link>
+                <Link style={{color:'white'}} to="/chat">My Calendar</Link>
               </li>
 
               <li className="nav-item">
-                <Link to="/tasks">Give Tasks</Link>
+                <Link style={{color:'white'}} to="/tasks"> Tasks</Link>
               </li>
+              
               <li
-                id="logout"
-                onClick={() => {
+                
+               
+              >
+                <a  onClick={() => {
                   localStorage.clear();
                   window.location.reload();
                 }}
-              >
-                Logout
+                style={{width:'120px',height:'40px',fontSize:'16px',marginTop:'0px',marginLeft:'350px'}} 
+                class="button b-blue">{" "}
+                  <RiLogoutCircleFill />
+                  Logout
+                </a>
+                
               </li>
             </ul>
           </div>

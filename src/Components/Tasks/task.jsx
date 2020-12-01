@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddTask from "./AddTask";
+import ModalPage from "./AddRef";
 import TaskM from "./Tasks";
+
 import { storage } from "../../fireBase/firebas";
 import firebase from "firebase/app";
 
 import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+
+
+import Table from "react-bootstrap/Table";
+import Dropdown from "react-bootstrap/Dropdown";
+import Button from "react-bootstrap/Button";
+import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
 
 class Task extends Component {
   constructor(props) {
@@ -17,8 +25,12 @@ class Task extends Component {
     };
   }
 
+  componentDidMount() {
+    this.check();
+  }
+
   check() {
-    axios.get("http://localhost:5500/task").then((response) => {
+    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
@@ -26,14 +38,45 @@ class Task extends Component {
   }
 
   render() {
-    this.check();
+    const getStatus = (status) => {
+    if(status==="fase 1" || status==="fase3")
+    return (
+          <button
+            style={{ width: "200px" }}
+            type="button"
+            class="btn btn-primary">
+            In progress
+          </button>);
+          
+          if(status==="fase 2")
+          return (<button
+            style={{ width: "200px" }}
+            type="button"
+            class="btn btn-danger">
+            In progress
+          </button>)
+          
+          if(status==="fase 4")
+          return (<button
+            style={{ width: "200px" }}
+            type="button"
+            class="btn btn-success">
+            In progress
+          </button>)
+          
+        
+      
+    };
     console.log(this.state.data);
-    const AddTaskStyle = {
+    // use it if there is value in it !
+  /*   const AddTaskStyle = {
       float: "left",
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
+
     };
+
 
     const handleFireBaseUpload = (e) => {
       e.preventDefault(); // prevent page refreshing
@@ -78,9 +121,17 @@ class Task extends Component {
       this.setState({ files: array });
       console.log(this.state.file);
     };
+
+    return !this.state.data? <div>loading</div>: (
+      <div>
+
+        <MDBContainer>
+
     return (
       <div className="container">
+
         <AddTask></AddTask>
+
         <input
           type="file"
           name="upload"
@@ -90,38 +141,49 @@ class Task extends Component {
         <MDBBtn color="red" onClick={handleFireBaseUpload}>
           add Ref
         </MDBBtn>
+
+        <ModalPage></ModalPage> 
+
+        </MDBContainer>
+
+
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
-        <table class="table table-sm table-dark">
+        <Table
+          style={{ marginRight: "1000px", marginTop: "30px" }}
+          striped
+          bordered
+          hover
+          variant="dark">
           <thead>
             <tr>
-              <th className="bg-info" scope="col">
-                In progress
-              </th>
-              <th className="bg-danger" scope="col">
-                On hold
-              </th>
-              <th className="bg-warning" scope="col">
-                In progress
-              </th>
-              <th className="bg-success" scope="col">
-                Done
-              </th>
+              <th>#</th>
+              <th>Description of the Task</th>
+              <th>Employee</th>
+              <th>Client</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="bg-info">IP</td>
-              <td className="bg-danger">OH</td>
-              <td className="bg-warning">IP</td>
-              <td className="bg-success">done</td>
-            </tr>
-          </tbody>
-        </table>
 
+            {this.state.data.map((t, i) => (
+              <tr>
+                <td>{i + 1}</td>
+                <td>descp </td>
+                <td>{t.EmployeeName}</td>
+                <td>{t.ClientName}</td>
+                <td>{getStatus(t.status)}</td>
+              </tr>
+            ))}
+           
+
+           
+           
+          </tbody>
+        </Table>
         {this.state.data.map((element, index) => {
           return element.status === "fase 1" ? (
             <div className="phase1">

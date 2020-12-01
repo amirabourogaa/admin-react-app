@@ -15,7 +15,7 @@ class Invitation extends React.Component {
 
   onSubmit(e) {
     axios
-      .put("http://localhost:5500/admin/register/invitation/singup", this.state)
+      .put("https://server-cunsulting.herokuapp.com/admin/register/invitation/singup", this.state)
       .then((res) => {
         window.location.href = "/";
       });

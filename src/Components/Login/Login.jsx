@@ -35,7 +35,7 @@ class Login extends Component {
         title: "Please enter a password longer than 8 characters...",
       });
     }
-    axios.post("http://localhost:5500/admin/login", obj).then((res) => {
+    axios.post("https://server-cunsulting.herokuapp.com/admin/login", obj).then((res) => {
       if (res.data !== false) {
         localStorage.setItem("email", obj.email);
         localStorage.setItem("bangigkeitansscherzwort", res.data);
@@ -55,29 +55,34 @@ class Login extends Component {
     if (this.state.view === "main") {
       return (
         <div>
+
           <center>
             <br></br> <br></br>
-            <form id="form">
-              <h1>Hello Boss </h1>
-              <input
-                required
-                type="text"
-                placeholder="email"
-                onChange={(e) => this.setState({ email: e.target.value })}
-                value={this.state.email}
-              />
-              <br></br> <br></br>
-              <input
-                required
-                type="password"
-                placeholder="Password"
-                onChange={(e) => this.setState({ password: e.target.value })}
-                value={this.state.password}
-              />
-              <br></br> <br></br>
-              <input type="button" value="Login" onClick={this.onSubmit} />
-              <br></br> <br></br>
-            </form>
+            <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div className="user-box">
+      <input className="loginInput"  type="text" name="" placeholder="email"  onChange={(e) => this.setState({ email: e.target.value })}
+                value={this.state.email}/>
+      <label>Username</label>
+    </div>
+    <div className="user-box">
+      <input className="loginInput"  type="password" placeholder="Password"  onChange={(e) => this.setState({ password: e.target.value })}
+                value={this.state.password}/>
+      <label>Password</label>
+      
+    </div>
+    <a style={{color:'white',fontStyle:'oblique',fontWeight:'bold'}} type="button" onClick={this.onSubmit}  >
+   
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Login
+    </a>
+  </form>
+</div>
+
           </center>
         </div>
       );
