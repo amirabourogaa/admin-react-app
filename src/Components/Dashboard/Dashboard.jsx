@@ -4,7 +4,6 @@ import "../Dashboard/style.css";
 
 import { Card } from "react-bootstrap";
 import { MDBBtn } from "mdbreact";
-import axios from "axios";
 import Swal from "sweetalert2";
 
 import { ActionOpacity } from "material-ui/svg-icons";
