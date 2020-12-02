@@ -83,7 +83,7 @@ class Task extends Component {
     return !this.state.data? <div>loading</div>: (
 
 
-      <div style={{backgroundColor:'whiteSmoke'}}>
+      <div style={{backgroundColor:' rgba(0,0,0,.6)'}}>
             <Container>
   <Row>
     <Col>  <AddTask></AddTask></Col>

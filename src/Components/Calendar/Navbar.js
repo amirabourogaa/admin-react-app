@@ -143,11 +143,11 @@ const Navbar = (props) => {
               <p>
               <Container>
   <Row>
-    <Col><div style={{fontSize:'50px',marginLeft:'300px'}}> 
+    <Col><div style={{fontSize:'50px',marginLeft:'300px',color:'white'}}> 
     <div style={{marginLeft:'80px'}}><FcCalendar/></div>
     
     {day}.{month + 1}.{year} {" "} </div></Col>
-    <div style={{fontSize:'50px',marginLeft:'500px'}}>
+    <div style={{fontSize:'50px',marginLeft:'500px',color:'white'}}>
     <div style={{marginLeft:'80px'}}><FcAlarmClock/><br/></div>
     
       {hour + 1}:{minutes}:{seconds}</div>
