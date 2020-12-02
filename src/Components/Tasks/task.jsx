@@ -4,16 +4,13 @@ import AddTask from "./AddTask";
 import AddRef from "./AddRef";
 import TaskM from "./Tasks";
 
-import { storage } from "../../fireBase/firebas";
-import firebase from "firebase/app";
+import moment from "moment";
 
 // import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
 
 
 import Table from "react-bootstrap/Table";
-import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
+
 import { Col, Container, Row } from "react-bootstrap";
 
 class Task extends Component {
@@ -45,7 +42,8 @@ class Task extends Component {
           <button
             style={{ width: "200px" }}
             type="button"
-            class="btn btn-primary">
+            class="btn btn-primary"
+            disabled>
             In progress
           </button>);
           
@@ -53,16 +51,18 @@ class Task extends Component {
           return (<button
             style={{ width: "200px" }}
             type="button"
-            class="btn btn-danger">
-            In progress
+            class="btn btn-danger"
+            disabled>
+            On Hold
           </button>)
           
           if(status==="fase 4")
           return (<button
             style={{ width: "200px" }}
             type="button"
-            class="btn btn-success">
-            In progress
+            class="btn btn-success"
+            disabled>
+            Complete
           </button>)
           
         
@@ -110,7 +110,7 @@ class Task extends Component {
           <thead>
             <tr>
               <th>#</th>
-              <th>Description of the Task</th>
+              <th>DueDate</th>
               <th>Employee</th>
               <th>Client</th>
               <th>Status</th>
@@ -121,7 +121,7 @@ class Task extends Component {
             {this.state.data.map((t, i) => (
               <tr>
                 <td>{i + 1}</td>
-                <td>descp </td>
+                <td>{moment(t.DueDate).format('MMMM Do YYYY')}</td>
                 <td>{t.EmployeeName}</td>
                 <td>{t.ClientName}</td>
                 <td>{getStatus(t.status)}</td>
