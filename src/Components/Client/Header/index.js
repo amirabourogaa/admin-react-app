@@ -31,9 +31,9 @@ function Header() {
   return (
     <div className="header container text-center">
       <center>
-      <div class="bg_move">
+      <div >
       
-        <h2>My clients</h2>
+        <h1>My clients</h1>
     </div>
        
       </center>

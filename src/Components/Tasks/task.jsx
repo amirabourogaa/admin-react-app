@@ -7,13 +7,14 @@ import TaskM from "./Tasks";
 import { storage } from "../../fireBase/firebas";
 import firebase from "firebase/app";
 
-import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+// import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
 
 
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
+import { Col, Container, Row } from "react-bootstrap";
 
 class Task extends Component {
   constructor(props) {
@@ -73,85 +74,26 @@ class Task extends Component {
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
-<<<<<<< HEAD
-=======
 
     };
 
 
-    const handleFireBaseUpload = (e) => {
-      e.preventDefault(); // prevent page refreshing
-      const promises = [];
-      console.log(Array.isArray(this.state.files));
-      this.state.files.forEach((file) => {
-        const uploadTask = firebase
-          .storage()
-          .ref()
-          .child(`your/file/path/${file.name}`)
-          .put(file);
-        promises.push(uploadTask);
-        uploadTask.on(
-          firebase.storage.TaskEvent.STATE_CHANGED,
-          (snapshot) => {
-            const progress =
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            if (snapshot.state === firebase.storage.TaskState.RUNNING) {
-              console.log(`Progress: ${progress}%`);
-            }
-          },
-          (error) => console.log(error.code),
-          async () => {
-            const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
-            // do something with the url
-            console.log(downloadURL);
-            axios.post("http://localhost:5500/References/add", {
-              url: downloadURL,
-            });
-          }
-        );
-      });
-      Promise.all(promises)
-        .then(() => console.log("hey"))
-        .catch((err) => console.log(err.code));
-    };
-
-    const handleImageAsFile = (e) => {
-      const files = e.target.files[0];
-      const array = [];
-      array.push(files);
-      this.setState({ files: array });
-      console.log(this.state.file);
->>>>>>> ff8c031548fe3ae60a9b5cf356bbd53e33451a96
-    };
+   
 
     return !this.state.data? <div>loading</div>: (
-      <div>
 
-        <MDBContainer>
-<<<<<<< HEAD
-        <AddTask></AddTask>
+
+      <div style={{backgroundColor:'whiteSmoke'}}>
+            <Container>
+  <Row>
+    <Col>  <AddTask></AddTask></Col>
+    <Col>
         <AddRef></AddRef> 
-=======
-
-    return (
-      <div className="container">
-
-        <AddTask></AddTask>
-
-        <input
-          type="file"
-          name="upload"
-          accept="application/pdf,application/vnd.ms-excel"
-          onChange={handleImageAsFile}
-        />
-        <MDBBtn color="red" onClick={handleFireBaseUpload}>
-          add Ref
-        </MDBBtn>
-
-        <ModalPage></ModalPage> 
->>>>>>> ff8c031548fe3ae60a9b5cf356bbd53e33451a96
-
-        </MDBContainer>
+</Col>
+  </Row>
+  
+</Container>
+      
 
 
         <br></br>
@@ -213,5 +155,7 @@ class Task extends Component {
       </div>
     );
   }
-}
+  }
+
+
 export default Task;

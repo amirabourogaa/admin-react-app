@@ -5,6 +5,7 @@ const Form = (props) => {
     <form className="form">
       <div className="form-group">
         <input 
+        style={{backgroundColor:'whiteSmoke',color:'whiteSmoke'}}
           className="form-control col col-lg-6 offset-lg-3"
           value={props.filterValue}
           name="filter-employees"

@@ -141,7 +141,7 @@ import React from 'react';
               <Wrapper>
                 <Row>
                 <div class="bg_move">
-                <i class="fas fa-briefcase"></i>
+                
         <h1>My employees</h1>
     </div>
                 </Row>

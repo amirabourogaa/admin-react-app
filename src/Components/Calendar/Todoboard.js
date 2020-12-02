@@ -4,6 +4,7 @@ import {DragDropContext} from 'react-beautiful-dnd';
 import {StateDispatchContext} from './stateManager.js';
 import { GrTableAdd } from 'react-icons/gr';
 import './Todoboard.css';
+import { MDBBtn } from "mdbreact";
 
 const Todoboard = (props) => {
   const stateDispatch = React.useContext(StateDispatchContext);
@@ -41,10 +42,18 @@ const Todoboard = (props) => {
         onClick={addList}
       >
          <a  
-                style={{width:'140px',height:'40px',fontSize:'16px',marginTop:'0px',marginLeft:'350px'}} 
+               
                 className="button b-pink">
-                 <GrTableAdd/>&nbsp;
-                  Add list
+                 
+                 <MDBBtn
+          style={{width:'150px'}}
+          rounded
+            color="danger"
+           
+          >
+            <GrTableAdd/>&nbsp;
+            Add list
+          </MDBBtn>
                 </a>
         {/* {"+ Add list"} */}
       </span>
