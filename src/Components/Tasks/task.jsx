@@ -1,17 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AddTask from "./AddTask";
-import ModalPage from "./AddRef";
+import AddRef from "./AddRef";
 import TaskM from "./Tasks";
+
+import { storage } from "../../fireBase/firebas";
+import firebase from "firebase/app";
+
+// import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+
+
 import Table from "react-bootstrap/Table";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
+import { Col, Container, Row } from "react-bootstrap";
+
 class Task extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      downloadURL: "",
+      files: [],
     };
   }
 
@@ -20,7 +31,7 @@ class Task extends Component {
   }
 
   check() {
-    axios.get("https://server-cunsulting.herokuapp.com/task").then((response) => {
+    axios.get("http://localhost:5500/task").then((response) => {
       if (response.data.length > this.state.data.length) {
         this.setState({ data: response.data });
       }
@@ -58,27 +69,31 @@ class Task extends Component {
       
     };
     console.log(this.state.data);
-    // use it if there is value in it !
-  /*   const AddTaskStyle = {
+    const AddTaskStyle = {
       float: "left",
       padding: "10px",
       fontFamily: "Arial",
       width: "400px",
-<<<<<<< HEAD
+
     };
+
+
+   
+
     return !this.state.data? <div>loading</div>: (
-      <div>
 
-        <MDBContainer>
-=======
-    }; */
-    return (
-      <div className="container">
->>>>>>> c5f1efba2ee5935fe073dc5d4b0efde81503aede
-        <AddTask></AddTask>
-        <ModalPage></ModalPage> 
 
-        </MDBContainer>
+      <div style={{backgroundColor:' rgba(0,0,0,.6)'}}>
+            <Container>
+  <Row>
+    <Col>  <AddTask></AddTask></Col>
+    <Col>
+        <AddRef></AddRef> 
+</Col>
+  </Row>
+  
+</Container>
+      
 
 
         <br></br>
@@ -140,5 +155,7 @@ class Task extends Component {
       </div>
     );
   }
-}
+  }
+
+
 export default Task;

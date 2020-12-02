@@ -1,5 +1,5 @@
 .sidebar-menu {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: black;
 }
 .active-item,
 .inactive-item {
@@ -16,8 +16,11 @@ body{
 }
 .vid-container{
   position:relative;
-  height:90vh;
-  overflow:hidden;
+  height:85vh;
+  background-color: #010008;
+}
+#dashboard{
+  background-color: #010008 !important;
 }
 .bgvid{
   position:absolute;
@@ -33,15 +36,7 @@ body{
   left:calc(50vw - 400px);
   overflow:hidden;
 }
-.bgvid.inner{
-  top:calc(-50vh + 200px);
-  left:calc(-50vw + 200px);
-  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
-  -webkit-filter:blur(10px);
-  -ms-filter: blur(10px);
-  -o-filter: blur(10px);
-  filter:blur(10px);
-}
+
 .box{
   position:absolute;
   margin-right: 500px;
@@ -49,7 +44,7 @@ body{
   width:100%;
   font-family:Helvetica;
   color:#fff;
-  background:rgba(26, 39, 82, 0.13);
+  background:#010008;
   padding:30px 0px;
 }
 .box h1{
