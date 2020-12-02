@@ -104,9 +104,12 @@ class Navbar extends Component {
                   localStorage.clear();
                   window.location.reload();
                 }}
-                
+                href="/"
                >{" "}
-                <MDBBtn style={{width:'150px'}} color="danger" type="submit" onClick={this.onSubmit}>
+                <MDBBtn style={{width:'150px'}} color="danger" type="submit" onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}>
      Logout
   
       
