@@ -1,8 +1,11 @@
 import React,{ useEffect, useState }from 'react';
 import './Navbar.css';
+import { MDBBtn } from "mdbreact";
+import {FcAlarmClock,FcCalendar} from 'react-icons/fc'
 import {StateDispatchContext} from './stateManager.js';
 import {  MDBIcon } from "mdbreact";
 import { FiSettings } from 'react-icons/fi';
+import { Col, Container, Row } from 'react-bootstrap';
 const SettingsMenu = (props) => {
 
   const stateDispatch = React.useContext(StateDispatchContext);
@@ -138,10 +141,22 @@ const Navbar = (props) => {
        <div class="bg_move">
       
               <p>
-                <MDBIcon icon="calendar-alt" /> 
-                <div style={{fontSize:'50px'}}>{day}.{month + 1}.{year} {" "} </div>
-                <MDBIcon icon="clock" /> 
-                <div style={{fontSize:'50px'}}>{hour + 1}:{minutes}:{seconds}</div>
+              <Container>
+  <Row>
+    <Col><div style={{fontSize:'50px',marginLeft:'300px',color:'white'}}> 
+    <div style={{marginLeft:'80px'}}><FcCalendar/></div>
+    
+    {day}.{month + 1}.{year} {" "} </div></Col>
+    <div style={{fontSize:'50px',marginLeft:'500px',color:'white'}}>
+    <div style={{marginLeft:'80px'}}><FcAlarmClock/><br/></div>
+    
+      {hour + 1}:{minutes}:{seconds}</div>
+    <Col></Col>
+  </Row>
+ 
+</Container>
+               
+               
               </p>
     </div>
     
@@ -151,10 +166,13 @@ const Navbar = (props) => {
         onClick={event => setSettingsMenuProps([event.target.offsetLeft, event.target.offsetTop, !settingsMenuProps[2]])}
       >
        <a  
-                style={{width:'140px',height:'40px',fontSize:'16px',marginTop:'0px',marginLeft:'350px'}} 
+                
                 className="button b-pink">
+                  <MDBBtn style={{width:'150px'}}color="danger" >
                   <FiSettings/>&nbsp;
-                  Settings
+      Settings
+      
+                </MDBBtn>
                 </a></span>
       {settingsMenuProps[2] &&
         <SettingsMenu
