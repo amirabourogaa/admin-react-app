@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from "mdbreact";
+import { MDBPopover,  MDBBtn, MDBContainer } from "mdbreact";
 class AddTask extends Component {
   constructor(props) {
     super(props);
@@ -21,27 +21,28 @@ class AddTask extends Component {
   }
 
   onSubmit(e) {
+    e.preventDefault();
+
     let obj = {
       EmployeeName: this.state.EmployeeName,
       ClientName: this.state.ClientName,
       DueDate: this.state.DueDate,
       status: "fase 1",
     };
-    axios.post("https://server-cunsulting.herokuapp.com/task/create", obj).then((res) => {
+    console.log(obj)
+    axios.post("http://localhost:5500/task/create", obj).then((res) => {
       console.log(res);
       window.location.reload();
     });
 
-    e.preventDefault();
   }
 
   render() {
     return (
-      <div>
-        <MDBContainer>
+      <>
           <div className="d-flex justify-content-center">
             <MDBPopover placement="top" popover clickable>
-              <MDBBtn color="red">Give Tasks </MDBBtn>
+              <MDBBtn color="red">Give Tasks</MDBBtn>
               <div>
                 <div>
                   <center
@@ -54,7 +55,7 @@ class AddTask extends Component {
                   >
                     <h1 style={{ color: "white" }}>Give tasks</h1>
                     <form style={{ fontSize: "18px" }} onSubmit={this.onSubmit}>
-                      <label name="Employeename">Employee name</label>
+                      <label name="EmployeeName">Employee name</label>
                       <input
                         required
                         name="EmployeeName"
@@ -92,9 +93,10 @@ class AddTask extends Component {
                       <MDBBtn
                         size="lg"
                         tag="a"
-                        type="submit"
+                        type="Submit"
                         floating
                         social="pin"
+                        onClick={this.onSubmit}
                       >
                         ADD
                       </MDBBtn>
@@ -104,9 +106,9 @@ class AddTask extends Component {
               </div>
             </MDBPopover>
           </div>
-        </MDBContainer>
+
         <div></div>
-      </div>
+      </>
     );
   }
 }

@@ -1,12 +1,4 @@
-body {
-  background-image: url('https://i.pinimg.com/originals/f2/05/52/f2055287869555b7efa535223ddc059a.jpg');
- 
-  background-size: cover;
-  min-width: 100%;
-  min-height: 100%;
 
-  background-repeat: no-repeat;
-}
 .chatbox-container {
   height: 440px;
 }
@@ -64,6 +56,7 @@ th {
 .input {
   border: 2px solid #eee;
   border-radius: 5px;
+  color:black !important ;
   background-color: #eee;
   padding: 10px;
   margin: 0 auto;
@@ -228,6 +221,10 @@ input[type="message"]:focus {
 #dashboard {
   display: flex;
   height: 100vh;
+}
+
+.loginInput{
+  color: white !important ;
 }
 .sidebar-menu {
   text-align: center;

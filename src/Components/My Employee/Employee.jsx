@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
       import Wrapper from "./Wrapper/index.jsx";
       import Table from "./Table/index.jsx";
@@ -141,7 +141,7 @@ import React, { Component } from 'react';
               <Wrapper>
                 <Row>
                 <div class="bg_move">
-                <i class="fas fa-briefcase"></i>
+                
         <h1>My employees</h1>
     </div>
                 </Row>

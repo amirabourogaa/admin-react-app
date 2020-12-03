@@ -5,8 +5,10 @@ import { FaRegAddressBook } from 'react-icons/fa';
 import { AiOutlineEdit } from 'react-icons/ai';
 
 import { MDBBtn } from "mdbreact";
+
 import axios from "axios";
 import Swal from "sweetalert2";
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -44,7 +46,7 @@ class Dashboard extends Component {
     switch (this.state.view) {
       case "overview":
         return (
-          <div id="dashboard">
+          <div style={{backgroundColor:'#010008'}} id="dashboard">
             <Sidebar setView={this.setView} />
             <Overview />
           </div>
@@ -65,7 +67,7 @@ class Dashboard extends Component {
         );
       case "administrator":
         return (
-          <div id="dashboard">
+          <div style={{backgroundColor:'#010008'}} id="dashboard">
             <Sidebar setView={this.setView} />
             <AdministratorView />
           </div>
@@ -96,7 +98,10 @@ class Sidebar extends React.Component {
           setView={this.props.setView}
         />
         <div>
+          
           <MDBBtn
+          style={{width:'150px'}}
+          rounded
             color="danger"
             onClick={() => {
               localStorage.clear();
@@ -261,17 +266,13 @@ class Overview extends React.Component {
   }
   render() {
     return (
-      <div className="dash-view">
+      <div  className="dash-view">
         <center>
         <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
+  
   <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
-    </video>
-    <div class="box" style={{marginRight:'500px'}}>
+    
+    <div style={{backgroundColor:'rgba(0, 0, 255, 0.1)'}} class="box" >
       <h1>Add client</h1>
       <input type="text"
                   placeholder="Full Name"
@@ -293,7 +294,7 @@ class Overview extends React.Component {
                   required
                   name="phoneNumber"/>
       <br/>
-      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      <MDBBtn style={{width:'150px'}}color="danger" type="submit" onClick={this.onSubmit}>
       Add
                 </MDBBtn>
      
@@ -357,17 +358,13 @@ class ScheduleView extends React.Component {
   }
   render() {
     return (
-      <div className="dash-view">
+      <div  className="dash-view">
         <center>
         <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
-  <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
-    </video>
-    <div class="box" style={{marginRight:'500px'}}>
+ 
+  <div  class="inner-container">
+    
+    <div class="box" style={{marginRight:'500px',backgroundColor:'rgba(0, 0, 255, 0.1)'}}>
       <h1>Add Employee</h1>
       <input type="text"
                   placeholder="Full Name"
@@ -389,67 +386,14 @@ class ScheduleView extends React.Component {
                   required
                   name="phoneNumber"/>
       <br/>
-      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      <MDBBtn style={{width:'150px'}}color="danger" type="submit" onClick={this.onSubmit}>
       Add
                 </MDBBtn>
      
     </div>
   </div>
 </div>
-          {/* <Card className="bg-dark text-white" style={{ height: "600px" }}>
-            <Card.ImgOverlay>
-              <Card.Title>
-                <h2 className="view-heading" style={{ color: "gold" }}>
-                  Add Employee
-                </h2>
-              </Card.Title>
-              <form>
-                <br></br>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  name="name"
-                  onChange={this.onChange}
-                  required
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="text"
-                  placeholder="email"
-                  required
-                  name="email"
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  required
-                  name="password"
-                  onChange={this.onChange}
-                />{" "}
-                <br></br>
-                <br></br>
-                <input
-                  onChange={this.onChange}
-                  type="text"
-                  placeholder="PhoneNumber"
-                  required
-                  name="phoneNumber"
-                />{" "}
-                <br></br>
-                <br></br>
-                <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
-                  Add
-                </MDBBtn>
-                <br></br>
-                <br></br>
-                <br></br>
-              </form>
-            </Card.ImgOverlay>
-          </Card> */}
+         
         </center>
         <DashboardCard />
       </div>
@@ -535,14 +479,10 @@ class PerformanceView extends React.Component {
       <div className="dash-view">
         <center>
         <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
-  <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
-    </video>
-    <div class="box" style={{marginRight:'500px'}}>
+  
+  <div   class="inner-container">
+   
+    <div class="box" style={{marginRight:'500px',backgroundColor:'rgba(0, 0, 255, 0.1)'}}>
       <h1>Edit Profile</h1>
      
       <input type="password"
@@ -563,8 +503,8 @@ class PerformanceView extends React.Component {
                   onChange={this.onChange}/>
    
       <br/>
-      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
-      Add
+      <MDBBtn style={{width:'150px'}}color="danger" type="submit" onClick={this.onSubmit}>
+      Edit
                 </MDBBtn>
      
     </div>
@@ -600,35 +540,12 @@ class AdministratorView extends React.Component {
     return (
       <div className="dash-view">
         <center>
-          {/* <Card className="bg-dark text-white" style={{ height: "600px" }}>
-            <Card.ImgOverlay>
-              <h2 className="view-heading" style={{ color: "gold" }}>
-                Add Admin
-              </h2>
-              <input
-                type="text"
-                placeholder="email"
-                required
-                name="email"
-                onChange={this.onChange}
-              />{" "}
-              <br></br>
-              <br></br>
-              <MDBBtn color="warning" type="submit" onClick={this.onSubmit}>
-                Add
-              </MDBBtn>
-              <DashboardCard />
-            </Card.ImgOverlay>
-          </Card> */}
+         
           <div class="vid-container">
-  {/* <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://mazwai.com/videvo_files/video/free/2014-09/small_watermarked/leif_eliasson--sunrise_over_bjorkasjo_preview.webm" type="video/webm"/>
-  </video> */}
+ 
   <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-      <source src="https://ak.picdn.net/shutterstock/videos/1008337756/preview/stock-footage-flight-into-cosmic-futuristic-hud-tunnel-seamless-vj-loop-for-music-videos-night-clubs.webm" type="video/webm"/>
-    </video>
-    <div class="box" style={{marginRight:'500px'}}>
+    
+    <div class="box" style={{marginRight:'500px',backgroundColor:'rgba(0, 0, 255, 0.1)'}}>
       <h1>Add admin</h1>
       <input
                 type="text"
@@ -641,7 +558,7 @@ class AdministratorView extends React.Component {
    
    
       <br/>
-      <MDBBtn color="danger" type="submit" onClick={this.onSubmit}>
+      <MDBBtn style={{width:'150px'}}color="danger" type="submit" onClick={this.onSubmit}>
       Add
       
                 </MDBBtn>
