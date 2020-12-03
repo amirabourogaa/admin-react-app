@@ -23,18 +23,20 @@ class AddTask extends Component {
   }
 
   onSubmit(e) {
+    e.preventDefault();
+
     let obj = {
       EmployeeName: this.state.EmployeeName,
       ClientName: this.state.ClientName,
       DueDate: this.state.DueDate,
       status: "fase 1",
     };
-    axios.post("https://server-cunsulting.herokuapp.com/task/create", obj).then((res) => {
+    console.log(obj)
+    axios.post("http://localhost:5500/task/create", obj).then((res) => {
       console.log(res);
       window.location.reload();
     });
 
-    e.preventDefault();
   }
 
   render() {
@@ -55,7 +57,7 @@ class AddTask extends Component {
                   >
                     <h1 style={{ color: "white" }}>Give tasks</h1>
                     <form style={{ fontSize: "18px" }} onSubmit={this.onSubmit}>
-                      <label name="Employeename">Employee name</label>
+                      <label name="EmployeeName">Employee name</label>
                       <input
                         required
                         name="EmployeeName"
@@ -93,9 +95,10 @@ class AddTask extends Component {
                       <MDBBtn
                         size="lg"
                         tag="a"
-                        type="submit"
+                        type="Submit"
                         floating
                         social="pin"
+                        onClick={this.onSubmit}
                       >
                         ADD
                       </MDBBtn>
