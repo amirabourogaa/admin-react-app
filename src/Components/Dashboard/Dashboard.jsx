@@ -532,6 +532,33 @@ class AdministratorView extends React.Component {
       .then((res) => {
         console.log(res.data);
       });
+      let timerInterval
+Swal.fire({
+  title: 'Email sent',
+  html: 'done',
+  timer: 2000,
+  timerProgressBar: true,
+  willOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
   }
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
