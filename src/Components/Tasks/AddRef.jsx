@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import axios from "axios";
 import firebase from "firebase/app";
+import Swal from "sweetalert2";
 
 class AddRef extends Component {
   constructor(props){
@@ -63,9 +64,13 @@ render() {
               url: downloadURL,  
           }
           
-          axios.post("http://localhost:5500/References/add", obj).then(res=>console.log(res))
+          axios.post("http://localhost:5500/References/add", obj).then(res=>{
+            // let timerInterval
+            console.log(res)
+          })
         }
       );
+
     });
     Promise.all(promises)
       .then(() => console.log("hey"))

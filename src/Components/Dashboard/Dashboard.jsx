@@ -535,7 +535,7 @@ class AdministratorView extends React.Component {
       let timerInterval
 Swal.fire({
   title: 'Email sent',
-  html: 'done',
+  html: 'Done',
   timer: 2000,
   timerProgressBar: true,
   willOpen: () => {
@@ -559,6 +559,7 @@ Swal.fire({
     console.log('I was closed by the timer')
   }
 })
+
   }
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });

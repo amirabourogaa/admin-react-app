@@ -35,7 +35,36 @@ class AddTask extends Component {
     axios.post("http://localhost:5500/task/create", obj).then((res) => {
       console.log(res);
       window.location.reload();
+
     });
+    let timerInterval
+Swal.fire({
+  title: 'Task added',
+  html: 'Successfully',
+  timer: 2000,
+  timerProgressBar: true,
+  willOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+
 
   }
 
